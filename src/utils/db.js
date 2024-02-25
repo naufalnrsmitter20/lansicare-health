@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-let uri = "mongodb+srv://naufalnr:kcQQbd5tMTrrQFue@cluster0.nwavamo.mongodb.net/LansiCare?retryWrites=true&w=majority";
+let uri = process.env.MONGO_URL;
 
 const connect = async () => {
   if (mongoose.connections[0].readyState) return;
