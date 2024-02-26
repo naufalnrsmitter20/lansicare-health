@@ -10,7 +10,7 @@ export default function AboutComponent() {
       <section>
         <div className="mx-auto mt-40 text-base-100">
           <h6 className="m-1 text-center text-xl">About us</h6>
-          <h1 className="mx-80 mb-20 mt-10 text-center text-6xl font-bold">
+          <h1 className="mx-80 mb-20 mt-10 bg-gradient-to-r from-darkBlue to-mainBlue bg-clip-text text-center text-6xl font-bold text-transparent">
             InnoSync Team
           </h1>
         </div>
@@ -23,7 +23,7 @@ export default function AboutComponent() {
                   <Image
                     src={image1}
                     alt="image"
-                    className="rounded-[6px] group-hover:ring-4 group-hover:ring-slate-300"
+                    className="rounded-[6px] group-hover:ring-4 group-hover:ring-mainBlue/20"
                   />
                   <p className="mt-3 hidden text-center text-base font-medium group-hover:block">
                     Muhammad Keefa Syawal (Hipster)
@@ -35,7 +35,7 @@ export default function AboutComponent() {
                   <Image
                     src={image2}
                     alt="image"
-                    className="rounded-[6px] group-hover:ring-4 group-hover:ring-slate-300"
+                    className="rounded-[6px] group-hover:ring-4 group-hover:ring-mainBlue/20"
                   />
                   <p className="mt-3 hidden text-center text-base font-medium group-hover:block">
                     Naufal Nabil Ramadhan (Hacker)
@@ -47,10 +47,10 @@ export default function AboutComponent() {
                   <Image
                     src={image3}
                     alt="image"
-                    className="rounded-[6px] group-hover:ring-4 group-hover:ring-slate-300"
+                    className="rounded-[6px] group-hover:ring-4 group-hover:ring-mainBlue/20"
                   />
                   <p className="mt-3 hidden text-center text-base font-medium group-hover:block">
-                    Raisya Ramadhani Achmad (Husler)
+                    Raisya Ramadhani Achmad (Hustler)
                   </p>
                 </div>
               </div>
@@ -59,7 +59,7 @@ export default function AboutComponent() {
                   <Image
                     src={image4}
                     alt="image"
-                    className="rounded-[6px] group-hover:ring-4 group-hover:ring-slate-300"
+                    className="rounded-[6px] group-hover:ring-4 group-hover:ring-mainBlue/20"
                   />
                   <p className="mt-3 hidden text-center text-base font-medium group-hover:block">
                     Rakha Adrian Nur Tanaya (Leader)
@@ -73,15 +73,15 @@ export default function AboutComponent() {
         {/* deskripsi */}
         <div className=" mx-auto mt-[10px] h-auto w-[1500px] place-items-center justify-center rounded-[10px] bg-primary-1000 shadow-md ">
           <div className="relative mb-20 ml-10 mt-20 h-full">
-            <div className="ml-10 mt-10 pb-10 pt-10">
-              <div className="">
+            <div className="ml-10 mt-10 flex pb-10 pt-10">
+              <div className=" w-full max-w-5xl">
                 <h1 className="flex justify-start text-5xl font-bold">Who</h1>
-                <h3 className="ml-5 break-words text-5xl font-bold text-darkBlue">
+                <h3 className="ml-7 max-w-7xl  text-5xl font-bold text-darkBlue">
                   are we
                 </h3>
               </div>
               <div className="font-medium">
-                <p className="ml-80 mr-20 flex justify-normal text-left">
+                <p className=" ml-20 mr-20 flex justify-normal text-left">
                   Selamat datang di website resmi LansiCare! Kami adalah tim
                   InnoSync yang terdiri dari empat individu berbakat yang
                   terdiri dari Rakha, sebagai ketua kami, memimpin dengan visi
@@ -94,7 +94,7 @@ export default function AboutComponent() {
                   sehingga membawa kesan megah kepada tim kami.
                 </p>
                 <br />
-                <p className="ml-80 mr-20 flex justify-normal text-left">
+                <p className="ml-20 mr-20 flex justify-normal text-left">
                   Kami menyediakan platform untuk memudahkan lansia dalam
                   menjalani check-up kesehatan. Website ini dirancang untuk
                   memberikan bantuan dengan melakukan registrasi check-up secara
@@ -107,7 +107,7 @@ export default function AboutComponent() {
                   sekitar.
                 </p>
                 <br />
-                <p className="ml-80 mr-20 flex justify-normal text-left">
+                <p className="ml-20 mr-20 flex justify-normal text-left">
                   Kami bersatu untuk menciptakan solusi luar biasa dan
                   menghadirkan ide-ide kreatif. Terima kasih telah berkunjung ke
                   situs kami.
