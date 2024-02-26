@@ -8,6 +8,7 @@ import CheckUp from "@/public/checkup.jpeg";
 import Regist from "@/public/registrasi.jpg";
 import Carousel from "./Carousel";
 import Forms from "./Forms";
+import Link from "next/link";
 
 export default function Homepage() {
   return (
@@ -76,7 +77,10 @@ export default function Homepage() {
                     </p>
                   </div>
                 </div>
-                <div className="max-h-sm w-fit rounded-lg border border-gray-200 bg-primary-1000 shadow transition-all hover:scale-95 hover:ring-4 hover:ring-mainBlue/20 dark:border-gray-700 dark:bg-gray-800">
+                <Link
+                  href="signup"
+                  className="max-h-sm w-fit rounded-lg border border-gray-200 bg-primary-1000 shadow transition-all hover:scale-95 hover:ring-4 hover:ring-mainBlue/20 dark:border-gray-700 dark:bg-gray-800"
+                >
                   <div>
                     <Image className="rounded-t-lg" src={Regist} alt="foto" />
                   </div>
@@ -90,8 +94,8 @@ export default function Homepage() {
                       Sekarang registrasi kesehatan tidak perlu ribet
                     </p>
                   </div>
-                </div>
-                <a
+                </Link>
+                <Link
                   href={"checkup"}
                   className="max-h-sm w-fit rounded-lg border border-gray-200 bg-primary-1000 shadow transition-all hover:scale-95 hover:ring-4 hover:ring-mainBlue/20 dark:border-gray-700 dark:bg-gray-800"
                 >
@@ -109,7 +113,7 @@ export default function Homepage() {
                       terdekat
                     </p>
                   </div>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
