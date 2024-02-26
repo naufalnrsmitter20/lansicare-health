@@ -86,10 +86,10 @@ export default function Carousel({ imageURL }: any) {
                 </p>
                 <div className="ml-48 flex flex-col space-y-4 sm:flex-row sm:justify-start sm:space-y-0">
                   <Link
-                    href={"profile"}
+                    href={"checkup"}
                     className="inline-flex items-center justify-center rounded-lg bg-darkBlue px-5 py-3 text-center text-base font-medium text-white hover:bg-mainBlue focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
                   >
-                    Explore more
+                    Daftar Check Up
                     <svg
                       className="ms-2 h-3.5 w-3.5 rtl:rotate-180"
                       aria-hidden="true"
