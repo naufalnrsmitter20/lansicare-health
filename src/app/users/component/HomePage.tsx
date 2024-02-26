@@ -15,7 +15,7 @@ export default function Homepage() {
       {/* Home Carousel */}
       <section className="scroll-smooth text-base-100">
         <Carousel />
-        <div className="mx-auto flex h-full flex-col place-items-center justify-center bg-base-50 pb-[30px] pt-[100px] align-middle font-inter">
+        <div className="mx-auto flex h-full flex-col place-items-center justify-center bg-base-50 pb-[30px] pt-[70px] align-middle font-inter">
           {/* Fitur-fitur */}
           <div
             id="main"

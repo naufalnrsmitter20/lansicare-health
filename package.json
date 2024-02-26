@@ -15,7 +15,7 @@
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
     "clipboard-copy": "^4.0.1",
-    "flowbite": "^2.2.1",
+    "flowbite": "^2.3.0",
     "flowbite-react": "^0.7.2",
     "mongodb": "^6.3.0",
     "mongoose": "^8.1.1",

@@ -18,7 +18,7 @@ export default function Carousel({ imageURL }: any) {
   }, []);
 
   return (
-    <div className="mt-20 h-screen max-h-screen w-full">
+    <div className="h-screen max-h-screen w-full pt-[87px]">
       <div
         id="carouselExampleCaptions"
         className="relative"
@@ -71,13 +71,13 @@ export default function Carousel({ imageURL }: any) {
                 alt="background Image"
               />
               <div className=" max-w-screen-xl px-4 py-24 text-start lg:py-56">
-                <h1 className="mb-4 pl-48 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl">
+                <h1 className="mb-4 pl-48 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-8xl">
                   Welcome User{" "}
                 </h1>
                 <p className="mb-8 text-lg font-normal text-gray-300 sm:px-16 lg:px-48 lg:text-xl">
                   Selamat datang, user! Website ini dirancang khusus untuk
                   membantu Anda dalam melakukan registrasi check-up kesehatan,
-                  dan juga website ini bisa membantu Anda melihat riwayat
+                  selain itu website ini juga bisa membantu Anda melihat riwayat
                   check-up kesehatan. Dapatkan akses informasi kesehatan Anda
                   dengan mudah dan cepat. Kami berkomitmen untuk menyediakan
                   layanan yang dapat meningkatkan kesehatan dan kesejahteraan
@@ -122,11 +122,11 @@ export default function Carousel({ imageURL }: any) {
             >
               <Image
                 src={lansia}
-                className=" absolute -z-20 w-screen bg-center bg-no-repeat object-right-top bg-blend-multiply"
+                className="absolute -z-20 w-screen bg-center bg-no-repeat object-right-top bg-blend-multiply"
                 alt="background Image"
               />
               <div className=" ml-40 max-w-screen-xl px-4 py-24 text-end lg:py-56">
-                <h1 className="mb-4 mt-7 pl-48 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl">
+                <h1 className="mb-4 mt-7 pl-48 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-8xl">
                   LansiCare{" "}
                 </h1>
                 <p className="mb-8 text-end text-lg font-normal text-gray-300 sm:pl-16 lg:pl-64 lg:text-xl">
@@ -142,7 +142,7 @@ export default function Carousel({ imageURL }: any) {
                 <div className="ml-48 flex flex-col space-y-4 sm:flex-row sm:justify-end sm:space-y-0">
                   <Link
                     href={"profile"}
-                    className="inline-flex items-center justify-center rounded-lg bg-darkBlue px-5 py-3 text-center text-base font-medium text-white hover:bg-mainBlue focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
+                    className="inline-flex items-center justify-center rounded-lg bg-darkBlue px-5 py-3 text-center text-base font-medium text-primary-50 hover:bg-mainBlue focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
                   >
                     Explore more
                     <svg
@@ -184,8 +184,8 @@ export default function Carousel({ imageURL }: any) {
                 className=" mx-auto max-w-screen-xl px-4 py-24 text-center lg:py-56"
                 // style={{ backgroundImage: `url('${imageURL}')` }}
               >
-                <h1 className=" mb-36 mt-16 text-4xl font-extrabold leading-none tracking-tight text-slate-200 md:text-5xl lg:text-6xl">
-                  Ayo jadwalkan chek-up kesehatan Anda sekarang juga!
+                <h1 className=" mb-36 mt-16 text-4xl font-extrabold leading-none tracking-tight text-slate-200 md:text-5xl lg:text-7xl">
+                  Ayo jadwalkan check-up kesehatan Anda sekarang juga!
                 </h1>
 
                 <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
