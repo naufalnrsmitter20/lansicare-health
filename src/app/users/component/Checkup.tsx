@@ -39,7 +39,7 @@ export default function CheckupComp() {
                   htmlFor="email"
                   className="mb-2 block text-sm font-semibold text-gray-900 dark:text-white"
                 >
-                  Hari/Tanggal
+                  Tanggal Check-up
                 </label>
                 <input
                   type="date"
@@ -61,7 +61,7 @@ export default function CheckupComp() {
                   id="Komentar"
                   name="komentar"
                   className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-mainBlue focus:ring-mainBlue dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                  placeholder="Komentar Anda"
+                  placeholder="Keluhan Anda"
                   required
                 />
               </div>

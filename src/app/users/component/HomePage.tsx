@@ -91,7 +91,10 @@ export default function Homepage() {
                     </p>
                   </div>
                 </div>
-                <div className="max-h-sm w-fit rounded-lg border border-gray-200 bg-primary-1000 shadow transition-all hover:scale-95 hover:ring-4 hover:ring-mainBlue/20 dark:border-gray-700 dark:bg-gray-800">
+                <a
+                  href={"checkup"}
+                  className="max-h-sm w-fit rounded-lg border border-gray-200 bg-primary-1000 shadow transition-all hover:scale-95 hover:ring-4 hover:ring-mainBlue/20 dark:border-gray-700 dark:bg-gray-800"
+                >
                   <div>
                     <Image className="rounded-t-lg" src={CheckUp} alt="foto" />
                   </div>
@@ -106,7 +109,7 @@ export default function Homepage() {
                       terdekat
                     </p>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
           </div>
