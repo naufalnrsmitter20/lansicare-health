@@ -71,7 +71,7 @@ export default function Carousel({ imageURL }: any) {
                 alt="background Image"
               />
               <div className=" max-w-screen-xl px-4 py-24 text-start lg:py-56">
-                <h1 className="mb-4 pl-48 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-8xl">
+                <h1 className="mb-10 pl-48 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-7xl">
                   Welcome User{" "}
                 </h1>
                 <p className="mb-8 text-lg font-normal text-gray-300 sm:px-16 lg:px-48 lg:text-xl">
@@ -126,7 +126,7 @@ export default function Carousel({ imageURL }: any) {
                 alt="background Image"
               />
               <div className=" ml-40 max-w-screen-xl px-4 py-24 text-end lg:py-56">
-                <h1 className="mb-4 mt-7 pl-48 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-8xl">
+                <h1 className="mb-10 mt-7 pl-48 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-7xl">
                   LansiCare{" "}
                 </h1>
                 <p className="mb-8 text-end text-lg font-normal text-gray-300 sm:pl-16 lg:pl-64 lg:text-xl">
