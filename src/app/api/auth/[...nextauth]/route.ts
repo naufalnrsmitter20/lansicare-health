@@ -6,9 +6,16 @@ import bcrypt from "bcryptjs";
 import Admin from "@/src/models/Admin";
 import Pasien from "@/src/models/Pasien";
 import connect from "@/src/utils/db";
+import { Provider } from "next-auth/providers/index";
 
-export const authOptions: any = {
-  // Configure one or more authentication providers
+interface AuthOptions {
+  providers: Provider[];
+  callbacks: {
+    signIn: (param: { user: AuthUser; account: Account }) => Promise<boolean>;
+  };
+}
+
+export const authOptions: AuthOptions = {
   providers: [
     CredentialsProvider({
       id: "credentials",
@@ -21,20 +28,20 @@ export const authOptions: any = {
       async authorize(credentials: any) {
         await connect();
         try {
-          const user = (await Admin.findOne({ email: credentials.email })) || (await Pasien.findOne({ email: credentials.email, nama: credentials.nama }));
+          const user = await Admin.findOne({ email: credentials.email });
+          await Pasien.findOne({
+            email: credentials.email,
+            nama: credentials.nama,
+          });
           if (user) {
-            const isPasswordCorrect = await bcrypt.compare(credentials.password, user.password);
+            const isPasswordCorrect = await bcrypt.compare(
+              credentials.password,
+              user.password,
+            );
             if (isPasswordCorrect) {
               return user;
             }
           }
-          // const pasien = await Pasien.findOne({ email: credentials.email });
-          // if (pasien) {
-          //   const isPasswordCorrect = await bcrypt.compare(credentials.password, user.password);
-          //   if (isPasswordCorrect) {
-          //     return pasien;
-          //   }
-          // }
         } catch (err: any) {
           throw new Error(err);
         }
@@ -44,17 +51,18 @@ export const authOptions: any = {
       clientId: process.env.GITHUB_ID ?? "",
       clientSecret: process.env.GITHUB_SECRET ?? "",
     }),
-    // ...add more providers here
   ],
   callbacks: {
-    async signIn({ user, account }: { user: AuthUser; account: Account }) {
-      if (account?.provider == "credentials") {
-        return true;
-      }
-      if (account?.provider == "github") {
-        await connect();
-        try {
-          const existingUser = (await Admin.findOne({ email: user.email })) || (await Pasien.findOne({ email: user.email }));
+    async signIn({ user, account }: { user: AuthUser; account?: Account }) {
+      try {
+        if (account?.provider === "credentials") {
+          return true;
+        } else if (account?.provider === "github") {
+          await connect();
+          const existingUser =
+            (await Admin.findOne({ email: user.email })) ||
+            (await Pasien.findOne({ email: user.email }));
+
           if (!existingUser) {
             const newAdmin = new Admin({
               email: user.email,
@@ -65,26 +73,17 @@ export const authOptions: any = {
 
             await newAdmin.save();
             await newPasien.save();
-            return true;
           }
-          // const existingPasien = await Pasien.findOne({ email: user.email });
-          // if (!existingPasien) {
-          //   const newPasien = new Pasien({
-          //     email: user.email,
-          //   });
-
-          //   await newPasien.save();
-          //   return true;
-          // }
           return true;
-        } catch (err) {
-          console.log("Error saving user", err);
-          return false;
         }
+      } catch (error) {
+        console.error("Error during sign-in:", error);
+        return false;
       }
+      return false; // Default to false if no conditions are met
     },
   },
 };
 
-export const handler = NextAuth(authOptions);
+export const handler = NextAuth(authOptions as any);
 export { handler as GET, handler as POST };
