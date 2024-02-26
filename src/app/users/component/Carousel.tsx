@@ -141,7 +141,7 @@ export default function Carousel({ imageURL }: any) {
                 </p>
                 <div className="ml-48 flex flex-col space-y-4 sm:flex-row sm:justify-end sm:space-y-0">
                   <Link
-                    href={"profile"}
+                    href={"about"}
                     className="inline-flex items-center justify-center rounded-lg bg-darkBlue px-5 py-3 text-center text-base font-medium text-primary-50 hover:bg-mainBlue focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
                   >
                     Explore more

@@ -9,11 +9,9 @@ export default function CheckupComp() {
   };
   return (
     <>
-      <main className=" relative mt-52">
+      <main className=" relative mt-40">
         <div className="">
-          <h1 className=" text-center text-5xl font-semibold">
-            Daftar Checkup Sekarang !
-          </h1>
+          <h1 className=" text-center text-5xl font-bold">Daftar Checkup</h1>
         </div>
         <div>
           <form name="form-komentar" onSubmit={handleSubmit}>
@@ -68,7 +66,7 @@ export default function CheckupComp() {
               {/* {!isMutating ? ( */}
               <button
                 type="submit"
-                className="mb-2 me-2 rounded-lg bg-darkBlue px-5 py-2.5 text-sm font-medium text-white hover:bg-mainBlue focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                className="mb-5 me-2 rounded-lg bg-darkBlue px-5 py-2.5 text-sm font-medium text-white hover:bg-mainBlue focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
                 Submit
               </button>
