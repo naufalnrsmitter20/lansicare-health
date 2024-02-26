@@ -32,7 +32,7 @@ interface PatientData {
   BerlakuHingga: Date;
 }
 
-export const Profile = ({
+const Profile = ({
   _id,
   email,
   riwayatPenyakit,
