@@ -13,4 +13,3 @@ export default function Admin() {
   redirect("/administration/dashboard/insight");
   return <main className=" p-8"></main>;
 }
-Admin.requireAuth = true;
