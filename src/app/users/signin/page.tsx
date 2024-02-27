@@ -11,12 +11,11 @@ export default function SigninPage() {
   const { data: session } = useSession();
 
   return (
-    <div className="w-screen h-screen">
+    <div className="h-screen w-screen">
       {!session ? <NavBar /> : <InBar />}
 
       <SigninUser />
-      <Footer/>
-
+      <Footer />
     </div>
   );
 }
