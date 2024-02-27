@@ -1,10 +1,20 @@
 // @ts-nocheck
 
-import NextAuth, { AuthOptions } from "next-auth";
+import NextAuth from "next-auth";
 import { authOptions } from "@/src/lib/authOption";
 
-export const handler = NextAuth(authOptions);
-export { handler as GET, handler as POST };
+const handler = NextAuth(authOptions);
+export {
+  handler as GET,
+  handler as POST,
+  handler as PATCH,
+  handler as DELETE,
+  //   handler as OPTIONS,
+  //   handler as HEAD,
+  //   handler as PUT,
+  //   handler as TRACE,
+  //   handler as CONNECT,
+};
 
 // import NextAuth from "next-auth";
 // import { Account, User as AuthUser } from "next-auth";
