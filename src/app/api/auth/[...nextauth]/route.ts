@@ -1,4 +1,5 @@
 // @ts-nocheck
+
 import NextAuth, { AuthOptions } from "next-auth";
 import { authOptions } from "@/src/lib/authOption";
 

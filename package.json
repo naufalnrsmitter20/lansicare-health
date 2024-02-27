@@ -25,7 +25,8 @@
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.50.0",
-    "tw-elements": "^1.1.0"
+    "tw-elements": "^1.1.0",
+    "vercel": "^33.5.2"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
