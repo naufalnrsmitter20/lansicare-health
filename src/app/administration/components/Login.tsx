@@ -11,7 +11,7 @@ export default function Login() {
 
   useEffect(() => {
     if (sessionStatus === "authenticated") {
-      router.replace("/admin/dashboard/insight");
+      router.replace("/administration/dashboard/insight");
       router.refresh();
       // window.location.reload();
     }
@@ -48,7 +48,7 @@ export default function Login() {
     if (res?.error) {
       setError("Invalid email or password");
       if (res?.url) {
-        router.replace("/admin/");
+        router.replace("/administration/");
         router.refresh();
         // window.location.reload();
       }
