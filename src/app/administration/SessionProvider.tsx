@@ -4,8 +4,6 @@ type Props = {
   children: React.ReactNode;
 };
 
-function NextAuthProvider({ children }: Props) {
-  return <SessionProvider basePath="/api/auth">{children}</SessionProvider>;
+export default function AuthProvider({ children }: any) {
+  return <SessionProvider>{children}</SessionProvider>;
 }
-
-export default NextAuthProvider;
