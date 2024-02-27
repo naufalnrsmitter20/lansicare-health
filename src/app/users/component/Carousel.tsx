@@ -63,7 +63,7 @@ export default function Carousel({ imageURL }: any) {
           >
             <main
               id="carousel1"
-              className="flex bg-gray-900/90  bg-center bg-no-repeat bg-blend-multiply"
+              className="flex h-auto w-screen bg-gray-900/90  bg-center bg-no-repeat"
             >
               <Image
                 src={hospitals}

@@ -13,13 +13,17 @@ export default function ApotekPage() {
   return (
     <>
       {!session ? (
-        <section className=" bg-gradient-to-r from-purple-gradient to-blue-gradient w-screen h-screen">
-          {/* <section className=" w-full flex justify-center items-center h-screen">
-          <Link href="/admin/dashboard/login" className="px-3 rounded-lg text-white bg-darkBlue group py-3 max-w-xl">
-            Login untuk melanjutkan
-          </Link>
-        </section> */}
-          <Login />
+        <section className=" h-screen w-screen bg-gradient-to-r from-purple-gradient to-blue-gradient">
+          <section className=" flex h-screen w-full items-center justify-center">
+            <Link
+              href="/admin/dashboard/login"
+              className="group max-w-xl  rounded-lg bg-transparent px-3 py-3 text-white hover:text-black"
+            >
+              Login untuk melanjutkan
+            </Link>
+          </section>
+          {/* <Login /> */}
+          {/* {(window.location.href = "/admin/dashboard/login")} */}
         </section>
       ) : (
         <div>
@@ -27,10 +31,12 @@ export default function ApotekPage() {
           <div className="flex">
             <Sidebar />
 
-            <div className="max-w-full w-3/4 ml-64">
+            <div className="ml-64 w-3/4 max-w-full">
               <Headers name="APOTEK" />
-              <div className="max-w-lg absolute right-0 top-0 mx-4">
-                <p className=" text-xs font-medium text-white bg-gray-800 py-4 px-5 rounded-full w-full mt-7 text-center">Logged in! : {session.user?.email}</p>
+              <div className="absolute right-0 top-0 mx-4 max-w-lg">
+                <p className=" mt-7 w-full rounded-full bg-gray-800 px-5 py-4 text-center text-xs font-medium text-white">
+                  Logged in! : {session.user?.email}
+                </p>
               </div>
             </div>
           </div>

@@ -61,9 +61,9 @@ export default function Login() {
     return <h1>Loading...</h1>;
   }
   const handleReload = () => {
-    setTimeout(() => {
+    if (sessionStatus === "authenticated") {
       window.location.reload();
-    }, 2000);
+    }
   };
   return (
     sessionStatus !== "authenticated" && (
