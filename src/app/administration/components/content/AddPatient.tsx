@@ -65,7 +65,9 @@ export default function AddPatient() {
       );
       setIsMutating(false);
       if (res.ok) {
-        router.push("/admin/dashboard/dataPage");
+        router.refresh();
+        alert(`Data Added!`);
+        router.push("/administration/dashboard/dataPage");
       } else {
         throw new Error("Failed to create a topic");
       }

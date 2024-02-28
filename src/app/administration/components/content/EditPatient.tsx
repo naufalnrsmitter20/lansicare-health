@@ -125,7 +125,7 @@ export default function EditPatient({
       }
       router.refresh();
       alert(`Data Uppdated!`);
-      router.push("/admin/dashboard/dataPage");
+      router.push("/administration/dashboard/dataPage");
     } catch (error) {
       console.log(error);
     }
