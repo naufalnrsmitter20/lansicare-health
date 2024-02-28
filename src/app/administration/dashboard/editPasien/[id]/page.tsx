@@ -39,9 +39,12 @@ interface PatientData {
 
 const getTopicById = async (_id: number) => {
   try {
-    const res = await fetch(`http://localhost:3000/api/topics/${_id}`, {
-      cache: "no-store",
-    });
+    const res = await fetch(
+      `https://lansicare-health.vercel.app/api/topics/${_id}`,
+      {
+        cache: "no-store",
+      },
+    );
 
     if (!res.ok) {
       throw new Error("Failed to fetch topic");
@@ -56,17 +59,39 @@ export default async function EditDataPages({ params }: { params: any }) {
   const { id } = params;
   try {
     const patientData: PatientData = await getTopicById(id);
-    const { nfcId, _id, email, riwayatPenyakit, pasienStatus, nama, NIK, TTL, JenisKelamin, Alamat, RT, RW, KelurahanDesa, Kecamatan, Agama, StatusPerkawinan, Pekerjaan, Kewarganegaraan, BerlakuHingga } = patientData;
+    const {
+      nfcId,
+      _id,
+      email,
+      riwayatPenyakit,
+      pasienStatus,
+      nama,
+      NIK,
+      TTL,
+      JenisKelamin,
+      Alamat,
+      RT,
+      RW,
+      KelurahanDesa,
+      Kecamatan,
+      Agama,
+      StatusPerkawinan,
+      Pekerjaan,
+      Kewarganegaraan,
+      BerlakuHingga,
+    } = patientData;
     // const {  } = KTP;
 
     return (
       <>
         <div>
           <Sidebar />
-          <div className="max-w-full w-3/4 ml-64">
+          <div className="ml-64 w-3/4 max-w-full">
             <Headers name="EDIT PATIENT" />
-            <div className="max-w-lg absolute right-0 top-0 mx-4">
-              <p className=" text-base font-medium text-white bg-gray-800 py-4 px-5 rounded-full w-full mt-7 text-center">Logged in! :</p>
+            <div className="absolute right-0 top-0 mx-4 max-w-lg">
+              <p className=" mt-7 w-full rounded-full bg-gray-800 px-5 py-4 text-center text-base font-medium text-white">
+                Logged in! :
+              </p>
             </div>
             <EditPatient
               nfcId={nfcId}

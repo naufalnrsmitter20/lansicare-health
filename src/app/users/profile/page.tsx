@@ -93,29 +93,32 @@ const Profile = ({
     setIsMutating(true);
 
     try {
-      const res = await fetch(`http://localhost:3000/api/topics/${_id}`, {
-        method: "PUT",
-        headers: {
-          "Content-type": "application/json",
+      const res = await fetch(
+        `https://lansicare-health.vercel.app/api/topics/${_id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify({
+            newNama,
+            newTTL,
+            newAlamat,
+            newRT,
+            newRW,
+            newJenisKelamin,
+            newKelurahanDesa,
+            newKecamatan,
+            newNIK,
+            newEmail,
+            newRiwayatPenyakit,
+            newStatus,
+            newAgama,
+            newKewarganegaraan,
+            newPekerjaan,
+          }),
         },
-        body: JSON.stringify({
-          newNama,
-          newTTL,
-          newAlamat,
-          newRT,
-          newRW,
-          newJenisKelamin,
-          newKelurahanDesa,
-          newKecamatan,
-          newNIK,
-          newEmail,
-          newRiwayatPenyakit,
-          newStatus,
-          newAgama,
-          newKewarganegaraan,
-          newPekerjaan,
-        }),
-      });
+      );
 
       if (!res.ok) {
         throw new Error("Failed to update Patient");

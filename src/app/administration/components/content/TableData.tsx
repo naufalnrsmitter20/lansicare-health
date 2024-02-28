@@ -40,7 +40,7 @@ type Patient = {
 
 export const getData = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/topics", {
+    const res = await fetch("https://lansicare-health.vercel.app/api/topics", {
       cache: "no-store",
     });
 

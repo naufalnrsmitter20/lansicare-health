@@ -92,13 +92,33 @@ export default function EditPatient({
     setIsMutating(true);
 
     try {
-      const res = await fetch(`http://localhost:3000/api/topics/${_id}`, {
-        method: "PUT",
-        headers: {
-          "Content-type": "application/json",
+      const res = await fetch(
+        `https://lansicare-health.vercel.app/api/topics/${_id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify({
+            newNfcId,
+            newNama,
+            newTTL,
+            newAlamat,
+            newRT,
+            newRW,
+            newJenisKelamin,
+            newKelurahanDesa,
+            newKecamatan,
+            newNIK,
+            newEmail,
+            newRiwayatPenyakit,
+            newStatus,
+            newAgama,
+            newKewarganegaraan,
+            newPekerjaan,
+          }),
         },
-        body: JSON.stringify({ newNfcId, newNama, newTTL, newAlamat, newRT, newRW, newJenisKelamin, newKelurahanDesa, newKecamatan, newNIK, newEmail, newRiwayatPenyakit, newStatus, newAgama, newKewarganegaraan, newPekerjaan }),
-      });
+      );
 
       if (!res.ok) {
         throw new Error("Failed to update Patient");
@@ -112,11 +132,14 @@ export default function EditPatient({
   };
   return (
     <>
-      <section className="container max-w-7xl w-ful mx-10 mt-7 block">
+      <section className="w-ful container mx-10 mt-7 block max-w-7xl">
         <form onSubmit={handleSubmit}>
-          <div className="grid gap-6 mb-6 md:grid-cols-2">
+          <div className="mb-6 grid gap-6 md:grid-cols-2">
             <div>
-              <label htmlFor="NFCID" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              <label
+                htmlFor="NFCID"
+                className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+              >
                 NFC ID
               </label>
               <input
@@ -124,13 +147,16 @@ export default function EditPatient({
                 id="NFCID"
                 onChange={(e) => setNewNfcId(parseInt(e.target.value))}
                 value={newNfcId}
-                className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-sky-400 focus:border-mainBlue block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="block w-full rounded-lg border border-gray-400 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-mainBlue focus:ring-sky-400 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                 placeholder="Nfc ID (Card Readers)"
                 required
               />
             </div>
             <div>
-              <label htmlFor="nama" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              <label
+                htmlFor="nama"
+                className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+              >
                 Nama
               </label>
               <input
@@ -138,13 +164,16 @@ export default function EditPatient({
                 id="nama"
                 onChange={(e) => setNewNama(e.target.value)}
                 value={newNama}
-                className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-sky-400 focus:border-mainBlue block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="block w-full rounded-lg border border-gray-400 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-mainBlue focus:ring-sky-400 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                 placeholder="Nama Lengkap"
                 required
               />
             </div>
             <div>
-              <label htmlFor="NIK" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              <label
+                htmlFor="NIK"
+                className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+              >
                 NIK
               </label>
               <input
@@ -152,13 +181,16 @@ export default function EditPatient({
                 id="NIK"
                 onChange={(e) => setNewNIK(parseInt(e.target.value))}
                 value={newNIK}
-                className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-sky-400 focus:border-mainBlue block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="block w-full rounded-lg border border-gray-400 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-mainBlue focus:ring-sky-400 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                 placeholder="16 digit"
                 required
               />
             </div>
             <div>
-              <label htmlFor="TTL" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              <label
+                htmlFor="TTL"
+                className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+              >
                 TTL
               </label>
               <input
@@ -166,13 +198,16 @@ export default function EditPatient({
                 id="TTL"
                 onChange={(e) => setNewTTL(e.target.value)}
                 value={newTTL}
-                className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-sky-400 focus:border-mainBlue block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="block w-full rounded-lg border border-gray-400 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-mainBlue focus:ring-sky-400 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                 placeholder="Nama Lengkap"
                 required
               />
             </div>
             <div>
-              <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              <label
+                htmlFor="email"
+                className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+              >
                 email
               </label>
               <input
@@ -180,13 +215,16 @@ export default function EditPatient({
                 id="email"
                 onChange={(e) => setNewEmail(e.target.value)}
                 value={newEmail}
-                className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-sky-400 focus:border-mainBlue block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="block w-full rounded-lg border border-gray-400 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-mainBlue focus:ring-sky-400 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                 placeholder="name@example.com"
                 required
               />
             </div>
             <div>
-              <label htmlFor="alamat" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              <label
+                htmlFor="alamat"
+                className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+              >
                 Alamat
               </label>
               <input
@@ -194,13 +232,16 @@ export default function EditPatient({
                 id="alamat"
                 onChange={(e) => setNewAlamat(e.target.value)}
                 value={newAlamat}
-                className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-sky-400 focus:border-mainBlue block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="block w-full rounded-lg border border-gray-400 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-mainBlue focus:ring-sky-400 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                 placeholder="Alamat Lengkap"
                 required
               />
             </div>
             <div>
-              <label htmlFor="riwayatPenyakit" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              <label
+                htmlFor="riwayatPenyakit"
+                className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+              >
                 Riwayat Penyakit
               </label>
               <input
@@ -208,13 +249,16 @@ export default function EditPatient({
                 id="riwayatPenyakit"
                 onChange={(e) => setNewRiwayatPenyakit(e.target.value)}
                 value={newRiwayatPenyakit}
-                className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-sky-400 focus:border-mainBlue block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="block w-full rounded-lg border border-gray-400 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-mainBlue focus:ring-sky-400 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                 placeholder="Riwayat Penyakit"
                 required
               />
             </div>
             <div>
-              <label htmlFor="rt" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              <label
+                htmlFor="rt"
+                className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+              >
                 RT
               </label>
               <input
@@ -222,13 +266,16 @@ export default function EditPatient({
                 id="rt"
                 onChange={(e) => setNewRT(parseInt(e.target.value))}
                 value={newRT}
-                className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-sky-400 focus:border-mainBlue block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="block w-full rounded-lg border border-gray-400 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-mainBlue focus:ring-sky-400 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                 placeholder="RT"
                 required
               />
             </div>
             <div>
-              <label htmlFor="jenisKelamin" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              <label
+                htmlFor="jenisKelamin"
+                className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+              >
                 Jenis Kelamin
               </label>
               <input
@@ -236,14 +283,17 @@ export default function EditPatient({
                 id="jenisKelamin"
                 onChange={(e) => setNewJenisKelamin(e.target.value)}
                 value={newJenisKelamin}
-                className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-sky-400 focus:border-mainBlue block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="block w-full rounded-lg border border-gray-400 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-mainBlue focus:ring-sky-400 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                 placeholder="Jenis Kelamin"
                 required
               />
             </div>
 
             <div>
-              <label htmlFor="rw" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              <label
+                htmlFor="rw"
+                className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+              >
                 RW
               </label>
               <input
@@ -251,13 +301,16 @@ export default function EditPatient({
                 id="rw"
                 onChange={(e) => setNewRW(parseInt(e.target.value))}
                 value={newRW}
-                className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-sky-400 focus:border-mainBlue block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="block w-full rounded-lg border border-gray-400 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-mainBlue focus:ring-sky-400 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                 placeholder="RW"
                 required
               />
             </div>
             <div>
-              <label htmlFor="agama" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              <label
+                htmlFor="agama"
+                className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+              >
                 Agama
               </label>
               <input
@@ -265,13 +318,16 @@ export default function EditPatient({
                 id="agama"
                 onChange={(e) => setNewAgama(e.target.value)}
                 value={newAgama}
-                className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-sky-400 focus:border-mainBlue block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="block w-full rounded-lg border border-gray-400 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-mainBlue focus:ring-sky-400 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                 placeholder="Agama"
                 required
               />
             </div>
             <div>
-              <label htmlFor="kelurahan_desa" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              <label
+                htmlFor="kelurahan_desa"
+                className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+              >
                 Kelurahan/Desa
               </label>
               <input
@@ -279,13 +335,16 @@ export default function EditPatient({
                 id="kelurahan_desa"
                 onChange={(e) => setNewKelurahan_desa(e.target.value)}
                 value={newKelurahanDesa}
-                className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-sky-400 focus:border-mainBlue block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="block w-full rounded-lg border border-gray-400 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-mainBlue focus:ring-sky-400 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                 placeholder="Kelurahan/Desa"
                 required
               />
             </div>
             <div>
-              <label htmlFor="kewarganegaraan" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              <label
+                htmlFor="kewarganegaraan"
+                className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+              >
                 Kewarganegaraan
               </label>
               <input
@@ -293,13 +352,16 @@ export default function EditPatient({
                 id="kewarganegaraan"
                 onChange={(e) => setNewKewarganegaraan(e.target.value)}
                 value={newKewarganegaraan}
-                className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-sky-400 focus:border-mainBlue block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="block w-full rounded-lg border border-gray-400 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-mainBlue focus:ring-sky-400 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                 placeholder="Indonesia"
                 required
               />
             </div>
             <div>
-              <label htmlFor="kecamatan" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              <label
+                htmlFor="kecamatan"
+                className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+              >
                 Kecamatan
               </label>
               <input
@@ -307,13 +369,16 @@ export default function EditPatient({
                 id="kecamatan"
                 onChange={(e) => setNewKecamatan(e.target.value)}
                 value={newKecamatan}
-                className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-sky-400 focus:border-mainBlue block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="block w-full rounded-lg border border-gray-400 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-mainBlue focus:ring-sky-400 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                 placeholder="Kecamatan"
                 required
               />
             </div>
             <div>
-              <label htmlFor="pekerjaan" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              <label
+                htmlFor="pekerjaan"
+                className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+              >
                 Pekerjaan
               </label>
               <input
@@ -321,13 +386,16 @@ export default function EditPatient({
                 id="pekerjaan"
                 onChange={(e) => setNewPekerjaan(e.target.value)}
                 value={newPekerjaan}
-                className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-sky-400 focus:border-mainBlue block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="block w-full rounded-lg border border-gray-400 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-mainBlue focus:ring-sky-400 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                 placeholder="Pekerjaan"
                 required
               />
             </div>
             <div>
-              <label htmlFor="status" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              <label
+                htmlFor="status"
+                className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+              >
                 Status
               </label>
               <select
@@ -335,7 +403,7 @@ export default function EditPatient({
                 id="status"
                 onChange={(e) => setNewStatus(e.target.value as PasienStatus)}
                 value={newStatus}
-                className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-sky-400 focus:border-mainBlue block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="block w-full rounded-lg border border-gray-400 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-mainBlue focus:ring-sky-400 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                 required
               >
                 <option value="null">-- SELECT --</option>
@@ -347,11 +415,17 @@ export default function EditPatient({
             </div>
             <div>
               {!isMutating ? (
-                <button type="submit" className="text-white bg-mainBlue hover:bg-sky-400 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none w-full">
+                <button
+                  type="submit"
+                  className="mb-2 me-2 w-full rounded-lg bg-mainBlue px-5 py-2.5 text-sm font-medium text-white hover:bg-sky-400 focus:outline-none focus:ring-4 focus:ring-blue-300"
+                >
                   <p>Edit</p>
                 </button>
               ) : (
-                <button type="button" className="text-white bg-mainBlue hover:bg-sky-400 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none w-full">
+                <button
+                  type="button"
+                  className="mb-2 me-2 w-full rounded-lg bg-mainBlue px-5 py-2.5 text-sm font-medium text-white hover:bg-sky-400 focus:outline-none focus:ring-4 focus:ring-blue-300"
+                >
                   <p>Saving...</p>
                 </button>
               )}
