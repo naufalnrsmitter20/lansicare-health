@@ -1,7 +1,7 @@
-import { redirect } from "next/navigation";
 import React from "react";
+import { redirect } from "next/navigation";
 
-export default function Admin() {
+export default function Administration() {
   redirect("/administration/dashboard/insight");
-  return <main className=" p-8"></main>;
+  return <></>;
 }
