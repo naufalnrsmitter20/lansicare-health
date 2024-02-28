@@ -3,13 +3,10 @@ import React from "react";
 import SessionAuth from "../../components/SessionAuth";
 import Sidebar from "../../components/content/Sidebar";
 import Headers from "../../components/content/Headers";
-import { getServerSession } from "next-auth";
 import { redirect, useRouter } from "next/navigation";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
 import MainDashboard from "../../components/content/MainDashboard";
-import { Session } from "inspector";
-import Login from "../../components/Login";
 
 export default function InsightPages() {
   // const session = useSession({

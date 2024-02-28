@@ -1,4 +1,3 @@
-"use client";
 import { SessionProvider as Provider, SessionProvider } from "next-auth/react";
 
 type Props = {
