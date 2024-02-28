@@ -16,7 +16,7 @@ export default function ApotekPage() {
         <section className=" h-screen w-screen bg-gradient-to-r from-purple-gradient to-blue-gradient">
           <section className=" flex h-screen w-full items-center justify-center">
             <Link
-              href="/admin/dashboard/login"
+              href="/administration/dashboard/login"
               className="group max-w-xl  rounded-lg bg-transparent px-3 py-3 text-white hover:text-black"
             >
               Login untuk melanjutkan
