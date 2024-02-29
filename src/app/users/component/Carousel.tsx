@@ -18,7 +18,7 @@ export default function Carousel({ imageURL }: any) {
   }, []);
 
   return (
-    <div className="h-screen max-h-screen w-full pt-[87px]">
+    <div className="h-screen max-h-screen w-full">
       <div
         id="carouselExampleCaptions"
         className="relative"
@@ -63,14 +63,14 @@ export default function Carousel({ imageURL }: any) {
           >
             <main
               id="carousel1"
-              className="flex h-auto w-screen bg-gray-900/90  bg-center bg-no-repeat"
+              className="flex h-auto w-screen bg-gray-900/90 bg-center bg-no-repeat"
             >
               <Image
                 src={hospitals}
                 className="absolute -z-20 w-screen bg-center bg-no-repeat bg-blend-multiply"
                 alt="background Image"
               />
-              <div className=" max-w-screen-xl px-4 py-24 text-start lg:py-56">
+              <div className=" max-w-screen-xl px-4 py-24 text-start lg:py-[188px]">
                 <h1 className="mb-10 pl-48 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-7xl">
                   Welcome User{" "}
                 </h1>
@@ -108,7 +108,7 @@ export default function Carousel({ imageURL }: any) {
                   </Link>
                 </div>
               </div>
-              <div className="mx-auto max-w-screen-xl px-4 py-24 text-center lg:py-56"></div>
+              <div className="mx-auto max-w-screen-xl px-4 py-24 text-center lg:py-[188px]"></div>
             </main>
           </div>
           <div
@@ -125,7 +125,7 @@ export default function Carousel({ imageURL }: any) {
                 className="absolute -z-20 w-screen bg-center bg-no-repeat object-right-top bg-blend-multiply"
                 alt="background Image"
               />
-              <div className=" ml-40 max-w-screen-xl px-4 py-24 text-end lg:py-56">
+              <div className=" ml-40 max-w-screen-xl px-4 py-24 text-end lg:py-[188px]">
                 <h1 className="mb-10 mt-7 pl-48 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-7xl">
                   LansiCare{" "}
                 </h1>
@@ -163,7 +163,7 @@ export default function Carousel({ imageURL }: any) {
                   </Link>
                 </div>
               </div>
-              {/* <div className="mx-auto max-w-screen-xl px-4 py-24 text-center lg:py-56"></div> */}
+              {/* <div className="mx-auto max-w-screen-xl px-4 py-24 text-center lg:py-[188px]"></div> */}
             </main>
           </div>
           <div
@@ -181,7 +181,7 @@ export default function Carousel({ imageURL }: any) {
                 alt="background Image"
               />
               <div
-                className=" mx-auto max-w-screen-xl px-4 py-24 text-center lg:py-56"
+                className=" mx-auto max-w-screen-xl px-4 py-24 text-center lg:py-[188px]"
                 // style={{ backgroundImage: `url('${imageURL}')` }}
               >
                 <h1 className=" mb-36 mt-16 text-4xl font-extrabold leading-none tracking-tight text-slate-200 md:text-5xl lg:text-7xl">

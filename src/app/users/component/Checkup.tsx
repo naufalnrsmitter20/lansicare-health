@@ -11,20 +11,21 @@ export default function CheckupComp() {
   return (
     <>
       <main className="">
-      <Carousel />
-      <div className="mx-auto flex h-full flex-col place-items-center justify-center bg-base-50 pb-[30px] pt-[70px] align-middle font-inter">
-        {/* Fitur-fitur */}
+        <div className="mx-auto flex h-full flex-col place-items-center justify-center bg-base-50 pb-[30px] pt-[70px] align-middle font-inter">
+          {/* Fitur-fitur */}
           <div
-            id="main"
-            className="mx-[35] mt-[10px] h-auto w-[1366.48px] rounded-[10px] bg-primary-1000 pb-10 shadow-md"
+            id="checkup"
+            className="mx-[35] mt-[40px] h-auto w-[1366.48px] rounded-[10px] bg-primary-1000 pb-10 shadow-md"
           >
             <div className="mt-[33px] inline-flex h-6 w-96 flex-col items-start justify-start px-10">
               <div className="self-stretch text-2xl font-semibold leading-normal text-neutral-800">
                 Checkup Kesehatan
               </div>
             </div>
-            </div>
-      </div>
+          </div>
+
+          <div className=""></div>
+        </div>
       </main>
     </>
   );

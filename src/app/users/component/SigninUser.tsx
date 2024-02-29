@@ -60,13 +60,13 @@ export default function SigninUser() {
   return (
     sessionStatus !== "authenticated" && (
       <>
-        <section className="mt-10 flex h-full min-w-full flex-1 flex-col justify-center bg-base-50 align-middle lg:px-8">
-          <div className=" max-h-3xl m-auto flex h-fit w-full max-w-7xl justify-around rounded-[30px] bg-primary-1000 pb-12 pt-5 shadow-md shadow-slate-600">
-            <main>
+        <section className="mt-20 flex h-full min-w-full flex-1 flex-col justify-center bg-base-50 align-middle lg:px-8">
+          <div className=" max-h-3xl m-auto flex h-fit w-full max-w-7xl justify-around rounded-[30px] bg-primary-1000 pb-10 pt-5 shadow-md shadow-slate-600">
+            <main className="m-10">
               <Image
                 src={SigninImage}
-                width={397.22}
-                height={305.61}
+                width={560.63}
+                height={392.28}
                 alt="SignIn Image"
               />
             </main>
