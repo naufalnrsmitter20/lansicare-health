@@ -37,13 +37,10 @@ export default function Homepage() {
               </div> */}
 
               <div className="mx-10 mt-5 grid grid-cols-2 content-center gap-4">
-                <Link
-                  href={"profile"}
-                  className="max-h-sm w-fit rounded-lg border border-gray-200 bg-primary-1000 shadow transition-all hover:scale-95 hover:ring-4 hover:ring-mainBlue/20 dark:border-gray-700 dark:bg-gray-800"
-                >
+                <div className="max-h-sm w-fit rounded-lg border border-gray-200 bg-primary-1000 shadow transition-all hover:scale-95 hover:ring-4 hover:ring-mainBlue/20 dark:border-gray-700 dark:bg-gray-800">
                   <div>
                     <Image
-                      className="rounded-t-lg"
+                      className="h-[300px] rounded-t-lg object-cover"
                       src={TrackingKesehatan}
                       alt="foto"
                     />
@@ -60,13 +57,10 @@ export default function Homepage() {
                   </div>
                 </Link>
 
-                <Link
-                  href={"#"}
-                  className="max-h-sm w-fit rounded-lg border border-gray-200 bg-primary-1000 shadow transition-all hover:scale-95 hover:ring-4 hover:ring-mainBlue/20 dark:border-gray-700 dark:bg-gray-800"
-                >
+                <div className="max-h-sm w-fit rounded-lg border border-gray-200 bg-primary-1000 shadow transition-all hover:scale-95 hover:ring-4 hover:ring-mainBlue/20 dark:border-gray-700 dark:bg-gray-800">
                   <div>
                     <Image
-                      className="rounded-t-lg"
+                      className="h-[300px] rounded-t-lg object-cover"
                       src={ResepObat}
                       width={700}
                       alt="foto"
@@ -85,10 +79,14 @@ export default function Homepage() {
                 </Link>
                 <Link
                   href="signup"
-                  className="max-h-sm w-fit rounded-lg border border-gray-200 bg-primary-1000 shadow transition-all hover:scale-95 hover:ring-4 hover:ring-mainBlue/20 dark:border-gray-700 dark:bg-gray-800"
+                  className="max-h-[420px] w-fit rounded-lg border border-gray-200 bg-primary-1000 shadow transition-all hover:scale-95 hover:ring-4 hover:ring-mainBlue/20 dark:border-gray-700 dark:bg-gray-800"
                 >
                   <div>
-                    <Image className="rounded-t-lg" src={Regist} alt="foto" />
+                    <Image
+                      className="h-[300px] rounded-t-lg object-cover"
+                      src={Regist}
+                      alt="foto"
+                    />
                   </div>
                   <div className="p-5">
                     <div>
@@ -103,15 +101,19 @@ export default function Homepage() {
                 </Link>
                 <Link
                   href={"checkup"}
-                  className="max-h-sm w-fit rounded-lg border border-gray-200 bg-primary-1000 shadow transition-all hover:scale-95 hover:ring-4 hover:ring-mainBlue/20 dark:border-gray-700 dark:bg-gray-800"
+                  className="max-h-[420px] w-fit rounded-lg border border-gray-200 bg-primary-1000 shadow transition-all hover:scale-95 hover:ring-4 hover:ring-mainBlue/20 dark:border-gray-700 dark:bg-gray-800"
                 >
                   <div>
-                    <Image className="rounded-t-lg" src={CheckUp} alt="foto" />
+                    <Image
+                      className="h-[300px] rounded-t-lg object-cover object-top"
+                      src={CheckUp}
+                      alt="foto"
+                    />
                   </div>
                   <div className="p-5">
                     <div>
                       <h5 className="mb-2 text-[18px] font-semibold tracking-tight text-base-100 dark:text-white">
-                        Check up Kesehatan
+                        Checkup Kesehatan
                       </h5>
                     </div>
                     <p className="mb-3 text-[15px] font-normal text-base-100 dark:text-gray-400">
