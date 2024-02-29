@@ -37,7 +37,10 @@ export default function Homepage() {
               </div> */}
 
               <div className="mx-10 mt-5 grid grid-cols-2 content-center gap-4">
-                <div className="max-h-sm w-fit rounded-lg border border-gray-200 bg-primary-1000 shadow transition-all hover:scale-95 hover:ring-4 hover:ring-mainBlue/20 dark:border-gray-700 dark:bg-gray-800">
+                <Link
+                  href={"profile"}
+                  className="max-h-sm w-fit rounded-lg border border-gray-200 bg-primary-1000 shadow transition-all hover:scale-95 hover:ring-4 hover:ring-mainBlue/20 dark:border-gray-700 dark:bg-gray-800"
+                >
                   <div>
                     <Image
                       className="rounded-t-lg"
@@ -55,9 +58,12 @@ export default function Homepage() {
                       Lacak Kesehatanmu Disini
                     </p>
                   </div>
-                </div>
+                </Link>
 
-                <div className="max-h-sm w-fit rounded-lg border border-gray-200 bg-primary-1000 shadow transition-all hover:scale-95 hover:ring-4 hover:ring-mainBlue/20 dark:border-gray-700 dark:bg-gray-800">
+                <Link
+                  href={"#"}
+                  className="max-h-sm w-fit rounded-lg border border-gray-200 bg-primary-1000 shadow transition-all hover:scale-95 hover:ring-4 hover:ring-mainBlue/20 dark:border-gray-700 dark:bg-gray-800"
+                >
                   <div>
                     <Image
                       className="rounded-t-lg"
@@ -76,7 +82,7 @@ export default function Homepage() {
                       Lihat Resep Obatmu Disini
                     </p>
                   </div>
-                </div>
+                </Link>
                 <Link
                   href="signup"
                   className="max-h-sm w-fit rounded-lg border border-gray-200 bg-primary-1000 shadow transition-all hover:scale-95 hover:ring-4 hover:ring-mainBlue/20 dark:border-gray-700 dark:bg-gray-800"
