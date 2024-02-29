@@ -10,7 +10,7 @@ export default function AboutComponent() {
       <section>
         <div className="mx-auto mt-40 text-base-100">
           <h6 className="m-1 text-center text-xl">About us</h6>
-          <h1 className="mx-80 mb-20 mt-10 bg-gradient-to-r from-darkBlue to-mainBlue bg-clip-text text-center text-6xl font-bold text-transparent">
+          <h1 className="mx-80 mt-10 bg-gradient-to-r from-darkBlue to-mainBlue bg-clip-text pb-20 text-center text-6xl font-bold text-transparent">
             InnoSync Team
           </h1>
         </div>
