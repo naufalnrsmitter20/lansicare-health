@@ -11,9 +11,8 @@ export default function CheckupComp() {
   return (
     <>
       <main className="">
-      <Carousel />
-      <div className="mx-auto flex h-full flex-col place-items-center justify-center bg-base-50 pb-[30px] pt-[70px] align-middle font-inter">
-        {/* Fitur-fitur */}
+        <div className="mx-auto flex h-full flex-col place-items-center justify-center bg-base-50 pb-[30px] pt-[70px] align-middle font-inter">
+          {/* Fitur-fitur */}
           <div
             id="main"
             className="mx-[35] mt-[10px] h-auto w-[1366.48px] rounded-[10px] bg-primary-1000 pb-10 shadow-md"
@@ -23,8 +22,8 @@ export default function CheckupComp() {
                 Checkup Kesehatan
               </div>
             </div>
-            </div>
-      </div>
+          </div>
+        </div>
       </main>
     </>
   );
