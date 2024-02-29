@@ -113,7 +113,7 @@ export default function Homepage() {
                   <div className="p-5">
                     <div>
                       <h5 className="mb-2 text-[18px] font-semibold tracking-tight text-base-100 dark:text-white">
-                        Check up Kesehatan
+                        Checkup Kesehatan
                       </h5>
                     </div>
                     <p className="mb-3 text-[15px] font-normal text-base-100 dark:text-gray-400">
