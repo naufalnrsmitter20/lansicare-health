@@ -84,7 +84,7 @@ export default function Homepage() {
                   </div>
                 </Link>
                 <Link
-                  href="signup"
+                  href={"signin"}
                   className="max-h-[420px] w-fit rounded-lg border border-gray-200 bg-primary-1000 shadow transition-all hover:scale-95 hover:ring-4 hover:ring-mainBlue/20 dark:border-gray-700 dark:bg-gray-800"
                 >
                   <div>
