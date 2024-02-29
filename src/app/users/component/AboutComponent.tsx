@@ -10,12 +10,12 @@ export default function AboutComponent() {
       <section>
         <div className="mx-auto mt-40 text-base-100">
           <h6 className="m-1 text-center text-xl">About us</h6>
-          <h1 className="mx-80 mb-20 mt-10 bg-gradient-to-r from-darkBlue to-mainBlue bg-clip-text text-center text-6xl font-bold text-transparent">
+          <h1 className="mx-80 mt-10 bg-gradient-to-r from-darkBlue to-mainBlue bg-clip-text pb-20 text-center text-6xl font-bold text-transparent">
             InnoSync Team
           </h1>
         </div>
 
-        <div className=" mx-auto h-auto w-[1500px] place-items-center justify-center rounded-[10px] bg-primary-1000 shadow-md ">
+        <div className=" mx-auto h-auto w-[1380px] place-items-center justify-center rounded-[10px] border-gray-200 bg-primary-1000 shadow-md ">
           <div className="relative h-full p-[100px]">
             <div className="relative mb-20 mt-[200px] grid h-10 w-full grid-cols-4">
               <div className="relative flex justify-center">
@@ -71,7 +71,7 @@ export default function AboutComponent() {
         </div>
 
         {/* deskripsi */}
-        <div className=" mx-auto mt-[10px] h-auto w-[1500px] place-items-center justify-center rounded-[10px] bg-primary-1000 shadow-md ">
+        <div className=" mx-auto mt-[10px] h-auto w-[1380px] place-items-center justify-center rounded-[10px] border-gray-200 bg-primary-1000 shadow-md ">
           <div className="relative mb-20 ml-10 mt-20 h-full">
             <div className="ml-10 mt-10 flex pb-10 pt-10">
               <div className=" w-full max-w-5xl">

@@ -60,13 +60,13 @@ export default function SigninUser() {
   return (
     sessionStatus !== "authenticated" && (
       <>
-        <section className="mt-10 flex h-full min-w-full flex-1 flex-col justify-center bg-base-50 align-middle lg:px-8">
-          <div className=" max-h-3xl m-auto flex h-fit w-full max-w-7xl justify-around rounded-[30px] bg-primary-1000 pb-12 pt-5 shadow-md shadow-slate-600">
-            <main>
+        <section className="mt-20 flex h-full min-w-full flex-1 flex-col justify-center bg-base-50 align-middle lg:px-8">
+          <div className=" max-h-3xl m-auto flex h-fit w-full max-w-7xl justify-around rounded-[30px] bg-primary-1000 pb-10 pr-20 pt-5 shadow-md shadow-slate-600">
+            <main className="m-10">
               <Image
                 src={SigninImage}
-                width={397.22}
-                height={305.61}
+                width={560.63}
+                height={392.28}
                 alt="SignIn Image"
               />
             </main>
@@ -115,7 +115,7 @@ export default function SigninUser() {
                   <div className="mt-7 grid grid-cols-2 gap-2">
                     <button
                       type="button"
-                      className="mb-2 me-2 rounded-lg border-2 border-base-100 bg-white px-5 py-2.5 text-sm font-medium text-base-100 hover:bg-base-100 hover:text-white focus:outline-none focus:ring-4 focus:ring-gray-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                      className="mb-2 me-2 rounded-lg border-2 bg-darkBlue/10 px-5 py-2.5 text-sm font-medium text-base-100 hover:bg-darkBlue hover:text-white focus:outline-none focus:ring-4 focus:ring-gray-500"
                     >
                       <p className="text-[14px] font-medium">
                         Forgot Password?
@@ -123,7 +123,7 @@ export default function SigninUser() {
                     </button>
                     <button
                       type="submit"
-                      className="mb-2 me-2 rounded-lg border-2 border-darkBlue bg-darkBlue px-5 py-2.5 text-sm font-medium text-white hover:bg-white hover:text-base-100 focus:outline-none focus:ring-4 focus:ring-gray-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                      className="mb-2 me-2 rounded-lg border-2 border-darkBlue bg-darkBlue px-5 py-2.5 text-sm font-medium text-white hover:bg-white hover:text-base-100 focus:outline-none focus:ring-4 focus:ring-gray-500"
                     >
                       <p className="text-[14px] font-medium">Signin</p>
                     </button>

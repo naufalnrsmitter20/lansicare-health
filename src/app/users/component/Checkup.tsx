@@ -1,85 +1,113 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
+import Carousel from "./Carousel";
+import serchIcon from "@/public/searchIcon.svg";
+import Image from "next/image";
+import Lokasi from "./utilities/Lokasi";
+import RumahSakit from "./utilities/RumahSakit";
+import Spesialis from "./utilities/Spesialis";
+import PilihanDokter from "./utilities/PilihanDokter";
+import JadwalCheckUp from "./utilities/JadwalCheckUp";
+import { redirect, useRouter } from "next/navigation";
 
 export default function CheckupComp() {
   const handleSubmit = () => {
     alert("Berhasil Daftar Check up! Cek email untuk detailnya");
     window.location.reload();
   };
+  const router = useRouter();
+  const [rumahSakitv, setRumahSakitv] = useState(false);
+  const [spesialisv, setSpesialisv] = useState(false);
+  const [dokterv, setDokterv] = useState(false);
+  const [jadwalkan, setJadwalkan] = useState(false);
+
+  const handleRumahSakit = () => {
+    setRumahSakitv(!rumahSakitv);
+  };
+  const handleSpesialis = () => {
+    setSpesialisv(!spesialisv);
+  };
+  const handleDokter = () => {
+    setDokterv(!dokterv);
+  };
+  const handleJadwal = () => {
+    setJadwalkan(!jadwalkan);
+  };
+  const handleClick = () => {
+    alert("Success to Check Up, Please Check Email to see Detail Check Up!");
+    // router.replace("/users/successcheckup");
+  };
   return (
     <>
-      <main className=" relative mt-40">
-        <div className="">
-          <h1 className=" text-center text-5xl font-bold">Daftar Checkup</h1>
-        </div>
-        <div>
-          <form name="form-komentar" onSubmit={handleSubmit}>
-            <div className="mx-auto my-8 max-w-3xl px-12">
-              <div className="mb-4">
-                <label
-                  htmlFor="nama"
-                  className="mb-2 block text-sm font-semibold text-gray-900 dark:text-white"
-                >
-                  Nama{" "}
-                </label>
-                <input
-                  type="text"
-                  id="nama"
-                  name="nama"
-                  className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-mainBlue focus:ring-mainBlue dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                  placeholder="Masukkan Nama"
-                  required
-                />
+      <main className="">
+        <div className="mx-auto flex h-full flex-col place-items-center justify-center bg-base-50 pb-[30px] pt-[70px] align-middle font-inter">
+          {/* Fitur-fitur */}
+          <div
+            id="checkup"
+            className="mx-[35] mt-[40px] h-auto w-[1366.48px] rounded-[10px] bg-primary-1000 pb-10 shadow-md"
+          >
+            <div className="mt-[33px] flex-col items-start justify-start px-10">
+              <div className="w-full self-stretch text-3xl font-bold leading-normal text-neutral-800">
+                Checkup Kesehatan
               </div>
-              <div className="mb-4">
-                <label
-                  htmlFor="email"
-                  className="mb-2 block text-sm font-semibold text-gray-900 dark:text-white"
-                >
-                  Tanggal Check-up
-                </label>
-                <input
-                  type="date"
-                  id="email"
-                  name="email"
-                  className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-mainBlue focus:ring-mainBlue dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                  placeholder="Masukkan Email"
-                  required
-                />
-              </div>
-              <div className="mb-4">
-                <label
-                  htmlFor="Komentar"
-                  className="mb-2 block text-sm font-semibold text-gray-900 dark:text-white"
-                >
-                  Keluhan
-                </label>
-                <textarea
-                  id="Komentar"
-                  name="komentar"
-                  className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-mainBlue focus:ring-mainBlue dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                  placeholder="Keluhan Anda"
-                  required
-                />
-              </div>
-              {/* {!isMutating ? ( */}
+            </div>
+          </div>
+          <div>
+            <Lokasi>
               <button
-                type="submit"
-                className="mb-5 me-2 rounded-lg bg-darkBlue px-5 py-2.5 text-sm font-medium text-white hover:bg-mainBlue focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                type="button"
+                onClick={handleRumahSakit}
+                className="mb-2 me-2 rounded-lg bg-darkBlue px-5 py-2.5 text-sm font-semibold text-white hover:bg-mainBlue focus:outline-none focus:ring-4 focus:ring-mainBlue/50 "
               >
-                Submit
+                Cari Rumah Sakit
               </button>
-              {/* ) : (
+            </Lokasi>
+            {rumahSakitv && (
+              <RumahSakit>
                 <button
                   type="button"
-                  className="mb-2 me-2 rounded-lg bg-mainBlue px-5 py-2.5 text-sm font-medium text-white hover:bg-mainBlue focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  onClick={handleSpesialis}
+                  className="mb-2 me-2 mt-8 max-w-sm rounded-lg bg-darkBlue px-5 py-2.5 text-sm font-semibold text-white hover:bg-mainBlue focus:outline-none focus:ring-4 focus:ring-mainBlue/50 "
                 >
-                  Loading . . .
+                  Cari Spesialis
                 </button>
-              )} */}
-            </div>
-          </form>
+              </RumahSakit>
+            )}
+            {spesialisv && (
+              <Spesialis>
+                <button
+                  type="button"
+                  onClick={handleDokter}
+                  className="mb-2 me-2 mt-8 rounded-lg bg-darkBlue px-5 py-2.5 text-sm font-semibold text-white hover:bg-mainBlue focus:outline-none focus:ring-4 focus:ring-mainBlue/50 "
+                >
+                  Cari Dokter
+                </button>
+              </Spesialis>
+            )}
+            {dokterv && (
+              <PilihanDokter>
+                <button
+                  type="button"
+                  onClick={handleJadwal}
+                  className="mb-2 me-2 mt-8 rounded-lg bg-darkBlue px-5 py-2.5 text-sm font-semibold text-white hover:bg-mainBlue focus:outline-none focus:ring-4 focus:ring-mainBlue/50 "
+                >
+                  Jadwalkan
+                </button>
+              </PilihanDokter>
+            )}
+            {jadwalkan && (
+              <JadwalCheckUp>
+                <button
+                  type="button"
+                  onClick={handleClick}
+                  className="mb-2 me-2 mt-8 rounded-lg bg-darkBlue px-5 py-2.5 text-sm font-semibold text-white hover:bg-mainBlue focus:outline-none focus:ring-4 focus:ring-mainBlue/50 "
+                >
+                  Buat Jadwal
+                </button>
+              </JadwalCheckUp>
+            )}
+          </div>
         </div>
       </main>
     </>
