@@ -634,71 +634,71 @@ export default function ProfilePage() {
                         {/* content */}
                       </div>
 
-                    <div className="mt-10 w-[1370px] max-w-full rounded-[10px] border bg-primary-1000 shadow-md">
-                      <h3 className=" px-12 pb-4 pt-5 font-inter text-2xl font-medium text-black">
-                        Riwayat Penyakit
-                      </h3>
-                      <div className="mt-4 px-12 pb-5">
-                        <div className=" max-w-[240px] rounded-[10px] border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
-                          <a href="#">
-                            <Image
-                              className="rounded-t-lg"
-                              src={gammbarAsma}
-                              width={"300"}
-                              height={"200"}
-                              alt=""
-                            />
-                          </a>
-                          <div className="p-5">
+                      <div className="mt-10 w-[1370px] max-w-full rounded-[10px] border bg-primary-1000 shadow-md">
+                        <h3 className=" px-12 pb-4 pt-5 font-inter text-2xl font-medium text-black">
+                          Riwayat Penyakit
+                        </h3>
+                        <div className="mt-4 px-12 pb-5">
+                          <div className=" max-w-[240px] rounded-[10px] border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
                             <a href="#">
-                              <h5 className="mb-2 text-lg font-semibold tracking-tight text-gray-800 dark:text-white">
-                                Asma
-                              </h5>
-                              <p className="text-sm">
-                                Senin, 19 January 100SM 12:00:35
-                              </p>
+                              <Image
+                                className="rounded-t-lg"
+                                src={gammbarAsma}
+                                width={"300"}
+                                height={"200"}
+                                alt=""
+                              />
                             </a>
+                            <div className="p-5">
+                              <a href="#">
+                                <h5 className="mb-2 text-lg font-semibold tracking-tight text-gray-800 dark:text-white">
+                                  Asma
+                                </h5>
+                                <p className="text-sm">
+                                  Senin, 19 January 100SM 12:00:35
+                                </p>
+                              </a>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div className="mb-10 mt-10 w-[1370px] max-w-full gap-6 rounded-md bg-white px-12 pb-5 shadow-md md:grid-cols-1">
-                      <h3 className=" pb-4 pt-5 font-inter text-2xl font-medium text-black">
-                        Riwayat Check Up
-                      </h3>
-                      <div className="lg:grid ">
-                        <div className="block max-w-sm rounded-lg border border-gray-200 bg-white p-6 shadow hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-                          <h5 className="mb-2 text-sm font-bold tracking-tight text-gray-900 dark:text-white">
-                            24 Maret 2023{" "}
-                          </h5>
-                          <p className="font-normal text-gray-700 dark:text-gray-400">
-                            <strong>Lokasi : </strong>Jawa Timur
-                            <br />
-                            <strong>Rumah Sakit : </strong>
-                            Husada Bunda
-                            <br />
-                            <strong>Spesialis : </strong>
-                            Umum
-                            <br />
-                            <strong>Dokter : </strong>
-                            Dr. Isti Mintorowati
-                          </p>
-                          <p className="mt-3 text-sm">
-                            <strong>Time : </strong>
-                            2024-02-28T09:03:18.456Z{" "}
-                          </p>
+                      <div className="mb-10 mt-10 w-[1370px] max-w-full gap-6 rounded-md bg-white px-12 pb-5 shadow-md md:grid-cols-1">
+                        <h3 className=" pb-4 pt-5 font-inter text-2xl font-medium text-black">
+                          Riwayat Check Up
+                        </h3>
+                        <div className="lg:grid ">
+                          <div className="block max-w-sm rounded-lg border border-gray-200 bg-white p-6 shadow hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                            <h5 className="mb-2 text-sm font-bold tracking-tight text-gray-900 dark:text-white">
+                              24 Maret 2023{" "}
+                            </h5>
+                            <p className="font-normal text-gray-700 dark:text-gray-400">
+                              <strong>Lokasi : </strong>Jawa Timur
+                              <br />
+                              <strong>Rumah Sakit : </strong>
+                              Husada Bunda
+                              <br />
+                              <strong>Spesialis : </strong>
+                              Umum
+                              <br />
+                              <strong>Dokter : </strong>
+                              Dr. Isti Mintorowati
+                            </p>
+                            <p className="mt-3 text-sm">
+                              <strong>Time : </strong>
+                              2024-02-28T09:03:18.456Z{" "}
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </>
-        </div>
-        <Footer />
-      </section>
-      {/* )} */}
+            </>
+          </div>
+          <Footer />
+        </section>
+      )}
     </>
   );
 }

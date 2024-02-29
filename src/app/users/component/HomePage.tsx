@@ -37,7 +37,10 @@ export default function Homepage() {
               </div> */}
 
               <div className="mx-10 mt-5 grid grid-cols-2 content-center gap-4">
-                <div className="max-h-sm w-fit rounded-lg border border-gray-200 bg-primary-1000 shadow transition-all hover:scale-95 hover:ring-4 hover:ring-mainBlue/20 dark:border-gray-700 dark:bg-gray-800">
+                <Link
+                  href={"profile"}
+                  className="max-h-sm w-fit rounded-lg border border-gray-200 bg-primary-1000 shadow transition-all hover:scale-95 hover:ring-4 hover:ring-mainBlue/20 dark:border-gray-700 dark:bg-gray-800"
+                >
                   <div>
                     <Image
                       className="h-[300px] rounded-t-lg object-cover"
@@ -57,7 +60,10 @@ export default function Homepage() {
                   </div>
                 </Link>
 
-                <div className="max-h-sm w-fit rounded-lg border border-gray-200 bg-primary-1000 shadow transition-all hover:scale-95 hover:ring-4 hover:ring-mainBlue/20 dark:border-gray-700 dark:bg-gray-800">
+                <Link
+                  href={""}
+                  className="max-h-sm w-fit rounded-lg border border-gray-200 bg-primary-1000 shadow transition-all hover:scale-95 hover:ring-4 hover:ring-mainBlue/20 dark:border-gray-700 dark:bg-gray-800"
+                >
                   <div>
                     <Image
                       className="h-[300px] rounded-t-lg object-cover"
