@@ -4,7 +4,9 @@ import React from "react";
 import serchIcon from "@/public/searchIcon.svg";
 import Image from "next/image";
 import Link from "next/link";
-import LavaletteGeneralHospital from "@/public/LavaletteGeneralHospital.jpg";
+import LavaletteGeneralHospital from "@/public/rs-lavalette.jpeg";
+import RumahSakitSaiful from "@/public/rs-saifulanwar.png";
+import RumahSakitPersada from "@/public/Persada-Hospital-Malang.jpg";
 export default function RumahSakit({ children }: any) {
   return (
     <>
@@ -52,66 +54,23 @@ export default function RumahSakit({ children }: any) {
             </form>
           </div>
           <div className="mt-8 grid grid-cols-1 gap-5 lg:grid-cols-3">
-            <div className="max-w-sm rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
+            <div className="max-h-[400px] max-w-sm rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
               <Link href="#">
                 <Image
-                  className="rounded-t-lg"
+                  className="h-[200px] rounded-t-lg object-cover"
                   src={LavaletteGeneralHospital}
-                  alt="Lavalette General Hospital"
+                  alt="Rumaah Lavalette"
                 />
               </Link>
               <div className="p-5">
                 <a href="#">
                   <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    Lavalette General Hospital
+                    Rumah Sakit Lavalette{" "}
                   </h5>
                 </a>
                 <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                   Jl. W.R. Supratman No.10, Rampal Celaket, Kec. Klojen, Kota
-                  Malang, Jawa Timur 65111 <br />
-                  <br />
-                  <br />
-                </p>
-                <Link
-                  href={"#"}
-                  className=" inline-flex items-center rounded-lg bg-darkBlue px-3 py-2 text-center align-bottom text-sm font-medium text-white hover:bg-mainBlue focus:outline-none focus:ring-4 focus:ring-mainBlue/30 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                >
-                  Selengkapnya
-                  <svg
-                    className="ms-2 h-3.5 w-3.5 rtl:rotate-180"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 14 10"
-                  >
-                    <path
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M1 5h12m0 0L9 1m4 4L9 9"
-                    />
-                  </svg>
-                </Link>
-              </div>
-            </div>
-            <div className="max-w-sm rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
-              <Link href="#">
-                <Image
-                  className="rounded-t-lg"
-                  src={LavaletteGeneralHospital}
-                  alt="Lavalette General Hospital"
-                />
-              </Link>
-              <div className="p-5">
-                <a href="#">
-                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    Rumah Sakit Ibu Dan Anak Puri Bunda{" "}
-                  </h5>
-                </a>
-                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                  Jl. Simpang Sulfat Utara No.60 A, Pandanwangi, Kec. Blimbing,
-                  Kota Malang, Jawa Timur 65126
+                  Malang, Jawa Timur 65111
                 </p>
                 <Link
                   href="#"
@@ -136,22 +95,63 @@ export default function RumahSakit({ children }: any) {
                 </Link>
               </div>
             </div>
-            <div className="max-w-sm rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
+            <div className="max-h-[400px] max-w-sm rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
               <Link href="#">
                 <Image
-                  className="rounded-t-lg"
-                  src={LavaletteGeneralHospital}
-                  alt="Lavalette General Hospital"
+                  className="h-[200px] rounded-t-lg object-cover object-top"
+                  src={RumahSakitSaiful}
+                  alt="Rumaah Sakit Saiful Anwar"
                 />
               </Link>
               <div className="p-5">
                 <a href="#">
                   <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    Rumah Sakit Ibu Dan Anak Puri Bunda{" "}
+                    RSUD Dr. Saiful Anwar{" "}
                   </h5>
                 </a>
                 <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                  Jl. Simpang Sulfat Utara No.60 A, Pandanwangi, Kec. Blimbing,
+                  Jl. Jaksa Agung Suprapto No.2, Klojen, Kec. Klojen, Kota
+                  Malang, Jawa Timur 65112
+                </p>
+                <Link
+                  href="#"
+                  className="inline-flex items-center rounded-lg bg-darkBlue px-3 py-2 text-center text-sm font-medium text-white hover:bg-mainBlue focus:outline-none focus:ring-4 focus:ring-mainBlue/30 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Selengkapnya
+                  <svg
+                    className="ms-2 h-3.5 w-3.5 rtl:rotate-180"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 10"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M1 5h12m0 0L9 1m4 4L9 9"
+                    />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+            <div className="max-h-[400px] max-w-sm rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
+              <Link href="#">
+                <Image
+                  className="h-[200px] rounded-t-lg object-cover"
+                  src={RumahSakitPersada}
+                  alt="Rumah Sakit Persada"
+                />
+              </Link>
+              <div className="p-5">
+                <a href="#">
+                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    Persada Hospital{" "}
+                  </h5>
+                </a>
+                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                  Jl. Raden Panji Suroso KAV.II-IV, Purwodadi, Kec. Blimbing,
                   Kota Malang, Jawa Timur 65126
                 </p>
                 <Link

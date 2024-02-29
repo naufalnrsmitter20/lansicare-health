@@ -5,11 +5,11 @@ import Carousel from "./Carousel";
 import serchIcon from "@/public/searchIcon.svg";
 import Image from "next/image";
 import Lokasi from "./utilities/Lokasi";
-import RumahSakit from "./utilities/RumahSakit";
 import Spesialis from "./utilities/Spesialis";
 import PilihanDokter from "./utilities/PilihanDokter";
 import JadwalCheckUp from "./utilities/JadwalCheckUp";
 import { redirect, useRouter } from "next/navigation";
+import RumahSakit from "./utilities/RumahSakit";
 
 export default function CheckupComp() {
   const handleSubmit = () => {
