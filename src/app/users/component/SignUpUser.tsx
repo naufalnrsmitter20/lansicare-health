@@ -75,7 +75,7 @@ export default function SignUpUser() {
     sessionStatus !== "authenticated" && (
       <>
         <section className="mt-20 flex h-full min-w-full flex-1 flex-col justify-center bg-base-50 align-middle lg:px-8">
-          <div className=" max-h-3xl m-auto flex h-fit w-full max-w-7xl justify-around rounded-[30px] bg-primary-1000 pb-12 pt-5 shadow-md shadow-slate-600">
+          <div className=" max-h-3xl m-auto flex h-fit w-full max-w-7xl justify-around rounded-[30px] bg-primary-1000 pb-12 pr-20 pt-5 shadow-md shadow-slate-600">
             <main className="m-20">
               <Image
                 src={SignupImage}
@@ -164,7 +164,7 @@ export default function SignUpUser() {
                   <div className="mt-7 grid grid-cols-2 gap-2">
                     <button
                       type="button"
-                      className="mb-2 me-2 rounded-lg border-2 border-base-100 bg-white px-5 py-2.5 text-sm font-medium text-base-100 hover:bg-base-100 hover:text-white focus:outline-none focus:ring-4 focus:ring-gray-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                      className="mb-2 me-2 rounded-lg border-2 bg-darkBlue/10 px-5 py-2.5 text-sm font-medium text-base-100 hover:bg-darkBlue hover:text-white focus:outline-none focus:ring-4 focus:ring-gray-500 dark:border-gray-600"
                     >
                       <p className="text-[14px] font-medium">
                         Forgot Password?

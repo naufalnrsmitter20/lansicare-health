@@ -662,16 +662,16 @@ export default function ProfilePage() {
                         </div>
                       </div>
                     </div>
-                    <div className="mb-10 mt-10 w-[1370px] max-w-full gap-6 rounded-md bg-white px-12 pb-5 shadow-md md:grid-cols-1">
-                      <h3 className=" pb-4 pt-5 font-inter text-2xl font-medium text-black">
+                    <div className="mb-10 mt-10 w-[1370px] max-w-full gap-6 rounded-md bg-primary-1000 px-12 pb-5 shadow-md md:grid-cols-1">
+                      <h3 className=" pb-4 pt-5 font-inter text-2xl font-medium text-base-100">
                         Riwayat Check Up
                       </h3>
                       <div className="lg:grid ">
-                        <div className="block max-w-sm rounded-lg border border-gray-200 bg-white p-6 shadow hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-                          <h5 className="mb-2 text-sm font-bold tracking-tight text-gray-900 dark:text-white">
+                        <div className="block max-w-sm rounded-[10px] border border-gray-200 bg-white p-6 shadow hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                          <h5 className="text-md mb-2 font-bold tracking-tight text-base-100">
                             24 Maret 2023{" "}
                           </h5>
-                          <p className="font-normal text-gray-700 dark:text-gray-400">
+                          <p className="font-normal text-base-100">
                             <strong>Lokasi : </strong>Jawa Timur
                             <br />
                             <strong>Rumah Sakit : </strong>
