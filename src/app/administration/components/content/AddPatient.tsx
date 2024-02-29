@@ -37,7 +37,7 @@ export default function AddPatient() {
 
     try {
       const res = await fetch(
-        "hhttps://lansicare-health.vercel.app/api/topics",
+        "https://lansicare-health.vercel.app/api/topics",
         {
           method: "POST",
           headers: {
