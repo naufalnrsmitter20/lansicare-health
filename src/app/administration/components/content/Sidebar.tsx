@@ -5,10 +5,12 @@ import React from "react";
 import Image from "next/image";
 import LansicareLogo from "../../../../img/LansicareLogo.png";
 import { signOut, useSession } from "next-auth/react";
-import { redirect } from "next/navigation";
+import { redirect, usePathname } from "next/navigation";
 
 export default function Sidebar() {
   const { data: session }: any = useSession();
+  const usePathNames = usePathname();
+
   return (
     <>
       <section className="">
@@ -25,7 +27,7 @@ export default function Sidebar() {
               <li>
                 <Link
                   href="/administration/dashboard/insight"
-                  className="group flex items-center  rounded-lg p-2 py-3 text-white hover:bg-darkBlue"
+                  className="group flex items-center rounded-lg p-2 py-3 text-white hover:bg-darkBlue"
                 >
                   <svg
                     className="h-5 w-5  text-gray-400 transition duration-75 group-hover:text-white"

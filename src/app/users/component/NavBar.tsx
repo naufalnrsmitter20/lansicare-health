@@ -9,10 +9,10 @@ import { signOut, useSession } from "next-auth/react";
 export default function NavBar() {
   return (
     <>
-      <nav className=" border-gray-200- fixed start-0 top-0 z-20 w-full border-b bg-primary-1000 dark:border-gray-600 dark:bg-gray-900 shadow-md">
+      <nav className=" border-gray-200- fixed start-0 top-0 z-20 w-full border-b bg-primary-1000 shadow-md dark:border-gray-600 dark:bg-gray-900">
         <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
-          <a
-            href="#"
+          <Link
+            href={"#"}
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
             <Image
@@ -22,10 +22,10 @@ export default function NavBar() {
               alt="Lansicare Logo Logo"
             />
             {/* <span className="self-center text-base-100 text-xl font-medium whitespace-nowrap dark:text-white">LansiCare</span> */}
-          </a>
+          </Link>
           {/* {!isLoggedIn ? ( */}
           <div className="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
-            <Link href={"/users/signup"} className="group block px-3  py-2">
+            <Link href={"/users/signup"} className="group block px-3 py-2">
               <svg
                 width="18"
                 className=" mx-auto block"
