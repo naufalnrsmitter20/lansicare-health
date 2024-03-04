@@ -662,7 +662,7 @@ export default function ProfilePage() {
                           </div>
                         </div>
                       </div>
-                      <div className="mb-10 mt-10 w-[1370px] max-w-full gap-6 rounded-md bg-white px-12 pb-5 shadow-md md:grid-cols-1">
+                      <div className="mb-10 mt-10 w-[1370px] max-w-full gap-6 rounded-md bg-primary-1000 px-12 pb-5 shadow-md md:grid-cols-1">
                         <h3 className=" pb-4 pt-5 font-inter text-2xl font-medium text-black">
                           Riwayat Check Up
                         </h3>
