@@ -20,7 +20,7 @@ export default function Homepage() {
           {/* Fitur-fitur */}
           <div
             id="main"
-            className="mx-[35] mt-[10px] h-auto w-[1366.48px] rounded-[10px] bg-primary-1000 pb-10 shadow-md"
+            className="mx-[35] mt-[10px] h-auto w-[450px] rounded-[10px] bg-primary-1000 pb-10 shadow-md lg:w-[1366.48px]"
           >
             <div className="mt-[33px] inline-flex h-6 w-96 flex-col items-start justify-start px-10">
               <div className="self-stretch text-2xl font-semibold leading-normal text-neutral-800">
@@ -36,14 +36,14 @@ export default function Homepage() {
                 <div className="relative h-3 w-3" />
               </div> */}
 
-              <div className="mx-10 mt-5 grid grid-cols-2 content-center gap-4">
+              <div className="mx-10 mt-5 grid grid-cols-1 content-center gap-4 lg:grid-cols-2">
                 <Link
                   href={"profile"}
                   className="max-h-sm w-fit rounded-lg border border-gray-200 bg-primary-1000 shadow transition-all hover:scale-95 hover:ring-4 hover:ring-mainBlue/20 dark:border-gray-700 dark:bg-gray-800"
                 >
                   <div>
                     <Image
-                      className="h-[300px] rounded-t-lg object-cover"
+                      className="h-[200px] rounded-t-lg object-cover lg:h-[300px]"
                       src={TrackingKesehatan}
                       alt="foto"
                     />
@@ -66,7 +66,7 @@ export default function Homepage() {
                 >
                   <div>
                     <Image
-                      className="h-[300px] rounded-t-lg object-cover"
+                      className="h-[200px] rounded-t-lg object-cover lg:h-[300px]"
                       src={ResepObat}
                       width={700}
                       alt="foto"
@@ -89,7 +89,7 @@ export default function Homepage() {
                 >
                   <div>
                     <Image
-                      className="h-[300px] rounded-t-lg object-cover"
+                      className="h-[200px] rounded-t-lg object-cover lg:h-[300px]"
                       src={Regist}
                       alt="foto"
                     />
@@ -111,7 +111,7 @@ export default function Homepage() {
                 >
                   <div>
                     <Image
-                      className="h-[300px] rounded-t-lg object-cover object-top"
+                      className="h-[200px] rounded-t-lg object-cover object-top lg:h-[300px]"
                       src={CheckUp}
                       alt="foto"
                     />
@@ -132,7 +132,7 @@ export default function Homepage() {
             </div>
           </div>
           {/* Komentar */}
-          <div className="mx-[35] mb-[20px] mt-[30px] w-[1366.48px] rounded-[10px] bg-primary-1000 shadow-md">
+          <div className="mx-[35] mb-[20px] mt-[30px] w-[450px] rounded-[10px] bg-primary-1000 shadow-md lg:w-[1366.48px]">
             <div className="mt-[33px] inline-flex h-6 w-96 flex-col items-start justify-start px-10">
               <div className="self-stretch text-2xl font-semibold leading-normal text-neutral-800">
                 Komentar
