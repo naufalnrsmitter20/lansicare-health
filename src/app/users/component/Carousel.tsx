@@ -70,11 +70,11 @@ export default function Carousel({ imageURL }: any) {
                 className="absolute -z-20 w-screen bg-center bg-no-repeat bg-blend-multiply"
                 alt="background Image"
               />
-              <div className=" max-w-screen-xl px-4 py-24 text-start lg:py-[188px]">
+              <div className="max-w-screen-xl px-4 py-24 text-start lg:py-[188px]">
                 <h1 className="mb-10 pl-48 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-7xl">
                   Welcome User{" "}
                 </h1>
-                <p className="mb-8 text-lg font-normal text-gray-300 sm:px-16 lg:px-48 lg:text-xl">
+                <p className="mb-8 text-sm font-normal text-gray-300 sm:px-16 lg:px-48 lg:text-xl">
                   Selamat datang, user! Website ini dirancang khusus untuk
                   membantu Anda dalam melakukan registrasi check-up kesehatan,
                   selain itu website ini juga bisa membantu Anda melihat riwayat

@@ -74,8 +74,8 @@ export default function SignUpUser() {
   return (
     sessionStatus !== "authenticated" && (
       <>
-        <section className="mt-20 flex h-full min-w-full flex-1 flex-col justify-center bg-base-50 align-middle lg:px-8">
-          <div className=" max-h-3xl m-auto flex h-fit w-full max-w-7xl justify-around rounded-[30px] bg-primary-1000 pb-12 pr-20 pt-5 shadow-md shadow-slate-600">
+        <section className=" mt-20 flex h-full min-w-full flex-1 flex-col justify-center bg-base-50 align-middle lg:px-8">
+          <div className=" max-h-3xl m-auto h-fit w-full max-w-7xl justify-around rounded-[30px] bg-primary-1000 px-5 pb-12 pt-5 shadow-md shadow-slate-600 lg:flex lg:px-0 lg:pr-20">
             <main className="m-20">
               <Image
                 src={SignupImage}
@@ -86,6 +86,9 @@ export default function SignUpUser() {
             </main>
             <main className="w-full max-w-lg">
               <form onSubmit={handleSubmit}>
+                <h1 className="mb-10 mt-20 justify-center text-center text-4xl font-bold">
+                  SignUp
+                </h1>
                 <div className="mb-5">
                   <label
                     htmlFor="nama"

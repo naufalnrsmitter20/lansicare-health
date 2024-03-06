@@ -15,6 +15,7 @@ export default function SigninPage() {
       {!session ? <NavBar /> : <InBar />}
 
       <SigninUser />
+      <div className=" my-20 lg:my-0"></div>
       <Footer />
     </div>
   );

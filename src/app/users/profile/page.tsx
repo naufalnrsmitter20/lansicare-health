@@ -165,31 +165,31 @@ export default function ProfilePage() {
         </>
       ) : (
         <section>
-          <div className="w-screen scroll-smooth bg-base-50">
+          <div className="w-screen overflow-hidden scroll-smooth bg-base-50 lg:overflow-auto">
             {!session ? <NavBar /> : <InBar />}
             <>
-              <div className="h-full pt-32">
-                <div className="flex max-w-full flex-1 flex-col justify-center align-middle font-inter lg:px-8">
-                  <div className="mx-auto inline-flex h-auto w-[1430px] place-items-center items-center justify-center py-[17px]">
-                    <div className="relative h-auto w-[1417px]">
-                      <div className="relative left-0 w-[1370px] rounded-[10px] bg-slate-50 pb-8 shadow">
-                        <div className="absolute left-0 top-0 h-[336px] w-[1370px] rounded-tl-[10px] rounded-tr-[10px] bg-gradient-to-r from-blue-200 to-cyan-700" />
+              <div className="h-full pt-16 lg:pt-32">
+                <div className="flex max-w-sm flex-1 flex-col justify-center align-middle font-inter lg:max-w-full lg:px-8">
+                  <div className="mx-auto inline-flex h-auto place-items-center items-center justify-center lg:py-[17px] ">
+                    <div className="relative h-auto">
+                      <div className="relative w-screen rounded-[10px] bg-slate-50 pb-8 shadow lg:w-full">
+                        <div className="absolute left-0 top-0 h-[336px] w-full rounded-tl-[10px] rounded-tr-[10px] bg-gradient-to-r from-blue-200 to-cyan-700" />
                         <div className="absolute left-[47.48px] top-[37.05px] inline-flex w-[1370px] items-center justify-start gap-[23px] pr-3 pt-4">
                           <div className="inline-flex shrink grow basis-0 flex-col items-start justify-start">
-                            <div className="self-stretch text-5xl font-bold leading-normal text-black">
+                            <div className="self-stretch text-4xl font-bold leading-normal text-black lg:text-5xl">
                               Profile
                             </div>
                           </div>
                         </div>
-                        <div className="absolute left-[47.48px] top-[168.13px] inline-flex h-[313px] w-[300px] items-center justify-center gap-[60px]">
+                        <div className="absolute left-10 top-[168.13px] inline-flex h-[313px] w-[300px]  items-center gap-[60px] lg:left-[47.48px] lg:justify-center">
                           <Image
                             src={Imageprofile}
-                            className="h-[300px] w-[300px] rounded-[150px] border-4 border-slate-50"
+                            className="h-[150px] w-[150px] rounded-[150px] border-4 border-slate-50 lg:h-[300px] lg:w-[300px]"
                             alt="Image profile"
                           />
                         </div>
                         {/* content */}
-                        <div className=" relative w-[1346.55px] pl-[47.48px] pt-[500px]">
+                        <div className=" relative w-[1346.55px] pl-[47.48px] pt-[450px] lg:pt-[500px]">
                           <div className="flex justify-between">
                             <div>
                               {!session ? (
@@ -197,7 +197,7 @@ export default function ProfilePage() {
                                   Undefined User
                                 </div>
                               ) : (
-                                <div className="mb-4 text-[32px] font-semibold leading-10 tracking-wider text-black">
+                                <div className="mb-4 truncate text-[32px] font-semibold leading-10 tracking-wider text-black">
                                   {session.user?.email}
                                 </div>
                               )}
@@ -221,7 +221,7 @@ export default function ProfilePage() {
                               See Details
                             </button>
 
-                            <div className="mt-10 grid max-w-5xl gap-6 md:grid-cols-1">
+                            <div className="mt-10 grid max-w-sm gap-6 pr-7 md:grid-cols-1 lg:max-w-5xl lg:pr-0">
                               <div>
                                 <label
                                   htmlFor="nama"
@@ -251,7 +251,7 @@ export default function ProfilePage() {
                                 />
                               </div>
                               {IsVisible && (
-                                <div className="grid gap-6 md:grid-cols-2 ">
+                                <div className="grid gap-6 lg:grid-cols-2 ">
                                   <div>
                                     <label
                                       htmlFor="nama"
@@ -430,7 +430,7 @@ export default function ProfilePage() {
                               isVisible={modal}
                               onClose={() => setModal(false)}
                             >
-                              <div className="grid gap-6 md:grid-cols-2">
+                              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                                 <div>
                                   <label
                                     htmlFor="nama"
@@ -634,7 +634,7 @@ export default function ProfilePage() {
                         {/* content */}
                       </div>
 
-                      <div className="mt-10 w-[1370px] max-w-full rounded-[10px] border bg-primary-1000 shadow-md">
+                      <div className="mt-10 w-screen max-w-full rounded-[10px] border bg-primary-1000 shadow-md lg:w-full">
                         <h3 className=" px-12 pb-4 pt-5 font-inter text-2xl font-medium text-black">
                           Riwayat Penyakit
                         </h3>
@@ -662,7 +662,7 @@ export default function ProfilePage() {
                           </div>
                         </div>
                       </div>
-                      <div className="mb-10 mt-10 w-[1370px] max-w-full gap-6 rounded-md bg-white px-12 pb-5 shadow-md md:grid-cols-1">
+                      <div className="mb-10 mt-10 w-screen max-w-full gap-6 rounded-md bg-primary-1000 px-12 pb-5 shadow-md md:grid-cols-1 lg:w-full">
                         <h3 className=" pb-4 pt-5 font-inter text-2xl font-medium text-black">
                           Riwayat Check Up
                         </h3>
