@@ -40,7 +40,7 @@ export default function CheckupComp() {
   };
   return (
     <>
-      <main className="">
+      <main>
         <div className="mx-auto flex h-full flex-col place-items-center justify-center bg-base-50 pb-[30px] pt-[70px] align-middle font-inter">
           {/* Fitur-fitur */}
           <div
