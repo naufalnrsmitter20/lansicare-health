@@ -10,12 +10,12 @@ export default function SignupPage() {
   const { data: session } = useSession();
 
   return (
-    <div className="w-screen h-screen">
+    <div className="h-screen w-screen">
       {!session ? <NavBar /> : <InBar />}
 
       <SignUpUser />
-      <Footer/>
-
+      <div className="my-20 lg:my-0"></div>
+      <Footer />
     </div>
   );
 }

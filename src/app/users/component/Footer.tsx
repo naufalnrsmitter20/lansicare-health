@@ -17,10 +17,6 @@ export default function Footer() {
                 </a>
               </div>
               <div className="grid gap-8 sm:grid-cols-3 sm:gap-6 md:grid-cols-2">
-                <div>
-                  {/* <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2> */}
-                  <ul className="font-medium text-gray-500 dark:text-gray-400"></ul>
-                </div>
                 <div className="mr-10">
                   <h2 className="mb-6 text-sm font-bold uppercase text-base-100 dark:text-white">
                     Resource
