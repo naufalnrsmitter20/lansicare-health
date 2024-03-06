@@ -60,8 +60,8 @@ export default function SigninUser() {
   return (
     sessionStatus !== "authenticated" && (
       <>
-        <section className="mt-20 flex h-full min-w-full flex-1 flex-col justify-center bg-base-50 align-middle lg:px-8">
-          <div className=" max-h-3xl m-auto flex h-fit w-full max-w-7xl justify-around rounded-[30px] bg-primary-1000 pb-10 pr-20 pt-5 shadow-md shadow-slate-600">
+        <section className=" flex h-full min-w-full flex-1 flex-col justify-center bg-base-50 align-middle lg:mt-20 lg:px-8">
+          <div className=" max-h-3xl m-auto mt-36 w-full max-w-7xl justify-around rounded-[30px] bg-primary-1000 pb-10 pt-5 shadow-md shadow-slate-600 lg:mt-0 lg:flex lg:h-fit lg:pr-20">
             <main className="m-10">
               <Image
                 src={SigninImage}
@@ -70,12 +70,12 @@ export default function SigninUser() {
                 alt="SignIn Image"
               />
             </main>
-            <main className="w-full max-w-lg">
-              <form onSubmit={handleSubmit}>
-                <div className="mb-5">
-                  <h1 className="mb-10 mt-20 justify-center text-center text-4xl font-bold">
-                    Hi User!
-                  </h1>
+            <main className="w-full max-w-lg px-5 lg:px-0">
+              <form onSubmit={handleSubmit} className="">
+                <h1 className="mb-10 mt-20 justify-center text-center text-4xl font-bold">
+                  Signin
+                </h1>
+                <div className=" mb-5">
                   <label
                     htmlFor="name"
                     className="mb-2 block text-sm font-semibold text-base-100 dark:text-white"
