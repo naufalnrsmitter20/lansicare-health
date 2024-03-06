@@ -15,55 +15,63 @@ export default function AboutComponent() {
           </h1>
         </div>
 
-        <div className=" mx-auto h-auto w-[450px] place-items-center justify-center rounded-[10px] border-gray-200 bg-primary-1000 shadow-md lg:w-[1380px] ">
+        <div className=" mx-auto h-auto w-full place-items-center justify-center rounded-[10px] border-gray-200 bg-primary-1000 shadow-md lg:w-[1380px] ">
           <div className="relative h-full p-[100px]">
-            <div className="relative mb-20 mt-[200px] grid h-10 w-full grid-cols-1 lg:grid-cols-4">
+            <div className="relative grid h-fit w-full grid-cols-1 lg:mb-20 lg:mt-[200px] lg:h-20 lg:grid-cols-4">
               <div className="relative flex justify-center">
-                <div className="group absolute -top-64 w-52 transition-all hover:scale-105">
-                  <Image
-                    src={image1}
-                    alt="image"
-                    className="rounded-[6px] group-hover:ring-4 group-hover:ring-mainBlue/20"
-                  />
-                  <p className="mt-3 hidden text-center text-base font-medium group-hover:block">
-                    Muhammad Keefa Syawal (Hipster)
-                  </p>
+                <div className="group relative w-52 transition-all hover:scale-105 lg:absolute lg:-top-64">
+                  <div className="">
+                    <Image
+                      src={image1}
+                      alt="image"
+                      className="rounded-[6px] group-hover:ring-4 group-hover:ring-mainBlue/20"
+                    />
+                    <p className="mb-7 mt-3 hidden text-center text-base font-medium group-hover:block">
+                      Muhammad Keefa Syawal (Hipster)
+                    </p>
+                  </div>
                 </div>
               </div>
               <div className="relative flex justify-center">
-                <div className="group absolute -top-32 w-52 transition-all hover:scale-105">
-                  <Image
-                    src={image2}
-                    alt="image"
-                    className="rounded-[6px] group-hover:ring-4 group-hover:ring-mainBlue/20"
-                  />
-                  <p className="mt-3 hidden text-center text-base font-medium group-hover:block">
-                    Naufal Nabil Ramadhan (Hacker)
-                  </p>
+                <div className="group relative w-52 transition-all hover:scale-105 lg:absolute lg:-top-32">
+                  <div className=" ">
+                    <Image
+                      src={image2}
+                      alt="image"
+                      className="rounded-[6px] group-hover:ring-4 group-hover:ring-mainBlue/20"
+                    />
+                    <p className="mb-7 mt-3 hidden text-center text-base font-medium group-hover:block">
+                      Naufal Nabil Ramadhan (Hacker)
+                    </p>
+                  </div>
                 </div>
               </div>
               <div className="relative flex justify-center">
-                <div className="group absolute -top-64 w-52 transition-all hover:scale-105">
-                  <Image
-                    src={image3}
-                    alt="image"
-                    className="rounded-[6px] group-hover:ring-4 group-hover:ring-mainBlue/20"
-                  />
-                  <p className="mt-3 hidden text-center text-base font-medium group-hover:block">
-                    Raisya Ramadhani Achmad (Hustler)
-                  </p>
+                <div className="group relative w-52 transition-all hover:scale-105 lg:absolute lg:-top-64">
+                  <div className=" ">
+                    <Image
+                      src={image3}
+                      alt="image"
+                      className="rounded-[6px] group-hover:ring-4 group-hover:ring-mainBlue/20"
+                    />
+                    <p className="mb-7 mt-3 hidden text-center text-base font-medium group-hover:block">
+                      Raisya Ramadhani Achmad (Hustler)
+                    </p>
+                  </div>
                 </div>
               </div>
               <div className="relative flex justify-center">
-                <div className="group absolute -top-32 w-52  transition-all hover:scale-105">
-                  <Image
-                    src={image4}
-                    alt="image"
-                    className="rounded-[6px] group-hover:ring-4 group-hover:ring-mainBlue/20"
-                  />
-                  <p className="mt-3 hidden text-center text-base font-medium group-hover:block">
-                    Rakha Adrian Nur Tanaya (Leader)
-                  </p>
+                <div className="group relative w-52 transition-all hover:scale-105  lg:absolute lg:-top-32">
+                  <div className="">
+                    <Image
+                      src={image4}
+                      alt="image"
+                      className="rounded-[6px] group-hover:ring-4 group-hover:ring-mainBlue/20"
+                    />
+                    <p className="mt-3 hidden text-center text-base font-medium group-hover:block">
+                      Rakha Adrian Nur Tanaya (Leader)
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
