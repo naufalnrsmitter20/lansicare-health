@@ -163,21 +163,22 @@ export default function ProfilePage() {
             </div>
           </div>
         </>
-      ) : ( */}
-      <section>
-        <div className="w-screen overflow-hidden scroll-smooth bg-base-50 lg:overflow-auto">
-          {!session ? <NavBar /> : <InBar />}
-          <>
-            <div className="h-full pt-16 lg:pt-32">
-              <div className="flex max-w-sm flex-1 flex-col justify-center align-middle font-inter lg:max-w-full lg:px-8">
-                <div className="mx-auto inline-flex h-auto place-items-center items-center justify-center lg:py-[17px] ">
-                  <div className="relative h-auto">
-                    <div className="relative w-screen rounded-[10px] bg-slate-50 pb-8 shadow lg:w-full">
-                      <div className="absolute left-0 top-0 h-[336px] w-full rounded-tl-[10px] rounded-tr-[10px] bg-gradient-to-r from-blue-200 to-cyan-700" />
-                      <div className="absolute left-[47.48px] top-[37.05px] inline-flex w-[1370px] items-center justify-start gap-[23px] pr-3 pt-4">
-                        <div className="inline-flex shrink grow basis-0 flex-col items-start justify-start">
-                          <div className="self-stretch text-4xl font-bold leading-normal text-black lg:text-5xl">
-                            Profile
+      ) : (
+        <section>
+          <div className="w-screen overflow-hidden scroll-smooth bg-base-50 lg:overflow-auto">
+            {!session ? <NavBar /> : <InBar />}
+            <>
+              <div className="h-full pt-16 lg:pt-32">
+                <div className="flex max-w-sm flex-1 flex-col justify-center align-middle font-inter lg:max-w-full lg:px-8">
+                  <div className="mx-auto inline-flex h-auto place-items-center items-center justify-center lg:py-[17px] ">
+                    <div className="relative h-auto">
+                      <div className="relative w-screen rounded-[10px] bg-slate-50 pb-8 shadow lg:w-full">
+                        <div className="absolute left-0 top-0 h-[336px] w-full rounded-tl-[10px] rounded-tr-[10px] bg-gradient-to-r from-blue-200 to-cyan-700" />
+                        <div className="absolute left-[47.48px] top-[37.05px] inline-flex w-[1370px] items-center justify-start gap-[23px] pr-3 pt-4">
+                          <div className="inline-flex shrink grow basis-0 flex-col items-start justify-start">
+                            <div className="self-stretch text-4xl font-bold leading-normal text-black lg:text-5xl">
+                              Profile
+                            </div>
                           </div>
                         </div>
                         <div className="absolute left-10 top-[168.13px] inline-flex h-[313px] w-[300px]  items-center gap-[60px] lg:left-[47.48px] lg:justify-center">
