@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <>
       <section>
-        <footer className="dark:bg-basetext-base-100 bg-base-150">
+        <footer className="dark:bg-basetext-base-100 w-screen bg-base-150 lg:w-auto ">
           <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-20">
             <div className="md:flex md:justify-between">
               <div className="mb-6 md:mb-0">
@@ -16,7 +16,7 @@ export default function Footer() {
                   <Image src={LogoFooter} width={220} alt="FlowBite Logo" />
                 </a>
               </div>
-              <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-6">
+              <div className="grid gap-8 sm:grid-cols-3 sm:gap-6 md:grid-cols-2">
                 <div>
                   {/* <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2> */}
                   <ul className="font-medium text-gray-500 dark:text-gray-400"></ul>
