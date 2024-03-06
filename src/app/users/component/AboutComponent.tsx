@@ -7,10 +7,10 @@ import Image from "next/image";
 export default function AboutComponent() {
   return (
     <>
-      <section>
-        <div className="mx-auto mt-40 text-base-100">
+      <section className="bg-base-50">
+        <div className="mx-auto pt-40 text-base-100">
           <h6 className="m-1 text-center text-sm lg:text-xl">About us</h6>
-          <h1 className="mx-80 mt-10 bg-gradient-to-r from-darkBlue to-mainBlue bg-clip-text pb-20 text-center text-4xl font-bold text-transparent lg:text-6xl">
+          <h1 className="mx-auto mt-10 bg-gradient-to-r from-darkBlue to-mainBlue bg-clip-text pb-20 text-center text-[40px] font-bold text-transparent lg:text-6xl">
             InnoSync Team
           </h1>
         </div>

@@ -176,7 +176,7 @@ export default function ProfilePage() {
                       <div className="absolute left-0 top-0 h-[336px] w-full rounded-tl-[10px] rounded-tr-[10px] bg-gradient-to-r from-blue-200 to-cyan-700" />
                       <div className="absolute left-[47.48px] top-[37.05px] inline-flex w-[1370px] items-center justify-start gap-[23px] pr-3 pt-4">
                         <div className="inline-flex shrink grow basis-0 flex-col items-start justify-start">
-                          <div className="self-stretch text-5xl font-bold leading-normal text-black">
+                          <div className="self-stretch text-4xl font-bold leading-normal text-black lg:text-5xl">
                             Profile
                           </div>
                         </div>
