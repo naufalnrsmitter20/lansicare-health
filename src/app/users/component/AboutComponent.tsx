@@ -7,7 +7,7 @@ import Image from "next/image";
 export default function AboutComponent() {
   return (
     <>
-      <section className="bg-base-50">
+      <section className="bg-base-50 pb-5">
         <div className="mx-auto pt-40 text-base-100">
           <h6 className="m-1 text-center text-sm lg:text-xl">About us</h6>
           <h1 className="mx-auto mt-10 bg-gradient-to-r from-darkBlue to-mainBlue bg-clip-text pb-20 text-center text-[45px] font-bold text-transparent lg:text-6xl">
