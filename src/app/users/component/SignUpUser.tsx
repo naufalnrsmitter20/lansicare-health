@@ -74,8 +74,8 @@ export default function SignUpUser() {
   return (
     sessionStatus !== "authenticated" && (
       <>
-        <section className=" mt-20 flex h-full min-w-full flex-1 flex-col justify-center bg-base-50 align-middle lg:px-8">
-          <div className=" max-h-3xl m-auto h-fit w-full max-w-7xl justify-around rounded-[30px] bg-primary-1000 px-5 pb-12 pt-5 shadow-md shadow-slate-600 lg:flex lg:px-0 lg:pr-20">
+        <section className="lg:min-w-xl mt-10 flex flex-1 flex-col justify-center bg-base-50 align-middle lg:mt-20 lg:h-full lg:px-8 lg:pb-20 lg:pt-40">
+          <div className="max-h-xl lg:max-h-3xl m-auto h-fit w-full max-w-7xl justify-around rounded-[5px] bg-primary-1000 px-5 pb-12 pt-5 shadow-md shadow-slate-600 lg:flex lg:rounded-[30px] lg:px-0 lg:pr-20">
             <main className="m-20">
               <Image
                 src={SignupImage}

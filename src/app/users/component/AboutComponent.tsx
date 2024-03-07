@@ -7,17 +7,17 @@ import Image from "next/image";
 export default function AboutComponent() {
   return (
     <>
-      <section className="bg-base-50">
+      <section className="bg-base-50 pb-5">
         <div className="mx-auto pt-40 text-base-100">
           <h6 className="m-1 text-center text-sm lg:text-xl">About us</h6>
-          <h1 className="mx-auto mt-10 bg-gradient-to-r from-darkBlue to-mainBlue bg-clip-text pb-20 text-center text-[40px] font-bold text-transparent lg:text-6xl">
+          <h1 className="mx-auto mt-10 bg-gradient-to-r from-darkBlue to-mainBlue bg-clip-text pb-20 text-center text-[45px] font-bold text-transparent lg:text-6xl">
             InnoSync Team
           </h1>
         </div>
 
-        <div className=" mx-auto h-auto w-full place-items-center justify-center rounded-[10px] border-gray-200 bg-primary-1000 shadow-md lg:w-[1380px] ">
+        <div className=" mx-auto h-auto w-[450px] place-items-center justify-center rounded-[10px] border-gray-200 bg-primary-1000 shadow-md lg:w-[1380px] ">
           <div className="relative h-full p-[100px]">
-            <div className="relative grid h-fit w-full grid-cols-1 lg:mb-20 lg:mt-[200px] lg:h-20 lg:grid-cols-4">
+            <div className="relative grid h-fit w-full grid-cols-1 gap-y-10 lg:mb-20 lg:mt-[200px] lg:h-20 lg:grid-cols-4">
               <div className="relative flex justify-center">
                 <div className="group relative w-52 transition-all hover:scale-105 lg:absolute lg:-top-64">
                   <div className="">
@@ -26,7 +26,7 @@ export default function AboutComponent() {
                       alt="image"
                       className="rounded-[6px] group-hover:ring-4 group-hover:ring-mainBlue/20"
                     />
-                    <p className="mb-7 mt-3 hidden text-center text-base font-medium group-hover:block">
+                    <p className="mt-3 hidden pb-7 text-center text-base font-medium group-hover:block lg:mb-7">
                       Muhammad Keefa Syawal (Hipster)
                     </p>
                   </div>
@@ -40,7 +40,7 @@ export default function AboutComponent() {
                       alt="image"
                       className="rounded-[6px] group-hover:ring-4 group-hover:ring-mainBlue/20"
                     />
-                    <p className="mb-7 mt-3 hidden text-center text-base font-medium group-hover:block">
+                    <p className="mt-3 hidden pb-7 text-center text-base font-medium group-hover:block lg:mb-7">
                       Naufal Nabil Ramadhan (Hacker)
                     </p>
                   </div>
