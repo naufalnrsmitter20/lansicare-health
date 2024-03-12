@@ -70,7 +70,7 @@ export default function Carousel({ imageURL }: any) {
                 className="absolute -z-20 w-screen bg-center bg-no-repeat bg-blend-multiply"
                 alt="background Image"
               />
-              <div className="max-w-screen-xl px-4 py-24 text-start lg:py-[188px]">
+              <div className="max-w-sm px-4 py-24 text-start lg:max-w-screen-xl lg:py-[188px]">
                 <h1 className="mb-10 pl-48 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-7xl">
                   Welcome User{" "}
                 </h1>
@@ -129,7 +129,7 @@ export default function Carousel({ imageURL }: any) {
                 <h1 className="mb-10 mt-7 pl-48 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-7xl">
                   LansiCare{" "}
                 </h1>
-                <p className="mb-8 text-end text-lg font-normal text-gray-300 sm:pl-16 lg:pl-64 lg:text-xl">
+                <p className="mb-8 text-end text-sm font-normal text-gray-300 sm:pl-16 lg:pl-64 lg:text-xl">
                   Website ini membantu Anda dalam melakukan registrasi check-up
                   secara online. Anda bisa melakukan registrasi check-up dengan
                   memilih dokter yang sesuai. Selanjutnya akan keluar nomor
