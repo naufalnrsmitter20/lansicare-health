@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import LansicareLogo from "@/public/logo-baru.png";
 import Link from "next/link";
 
-import { signOut, useSession } from "next-auth/react";
+import { signIn, signOut, useSession } from "next-auth/react";
 
 export default function NavBar() {
   const [modal, setModal] = useState(false);
@@ -29,7 +29,7 @@ export default function NavBar() {
           </Link>
           {/* {!isLoggedIn ? ( */}
           <div className="hidden space-x-3 md:order-2 md:flex md:space-x-0 rtl:space-x-reverse">
-            <Link href={"/users/signup"} className="group block px-3 py-2">
+            <Link href={"/signup"} className="group block px-3 py-2">
               <svg
                 width="18"
                 className=" mx-auto block"
@@ -67,7 +67,7 @@ export default function NavBar() {
                 Sign Up
               </p>
             </Link>
-            <Link href={"/users/signin"} className="group block px-3  py-2">
+            <button onClick={() => signIn()} className="group block px-3  py-2">
               <svg
                 width="18"
                 className=" mx-auto block"
@@ -98,7 +98,7 @@ export default function NavBar() {
               <p className="rounded text-[12px] text-base-100 hover:bg-gray-100 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:p-0 md:hover:bg-transparent group-hover:md:text-Navbar-Hover md:dark:hover:bg-transparent group-hover:md:dark:text-Navbar-Hover">
                 Sign In
               </p>
-            </Link>
+            </button>
             {/* <button className="flex items-center p-2 rounded-lg" onClick={() => handleLogout}>
               <span className="flex-1 ms-3 text-base-100 text-start">Logout</span>
             </button> */}
@@ -136,7 +136,7 @@ export default function NavBar() {
                 <ul className="fixed left-0 mt-5 w-screen border-t border-slate-700 bg-primary-1000 py-2">
                   <li className=" border-b border-b-gray-500">
                     <Link
-                      href={"/users/homepage"}
+                      href={"/"}
                       className="group flex justify-center px-3 py-2"
                     >
                       <svg
@@ -159,7 +159,7 @@ export default function NavBar() {
                   </li>
                   <li className=" border-b border-b-gray-500">
                     <Link
-                      href={"/users/about"}
+                      href={"/about"}
                       className="group flex justify-center px-3 py-2"
                     >
                       <svg
@@ -196,7 +196,7 @@ export default function NavBar() {
                   </li>
                   <li className=" border-b border-b-gray-500">
                     <Link
-                      href={"/users/profile"}
+                      href={"/profile"}
                       className="group flex justify-center px-3 py-2"
                     >
                       <svg
@@ -268,8 +268,8 @@ export default function NavBar() {
                     </Link>
                   </li>
                   <li className=" border-b border-b-gray-500">
-                    <Link
-                      href={"/users/signin"}
+                    <button
+                      onClick={() => signIn()}
                       className="group flex justify-center px-3 py-2"
                     >
                       <svg
@@ -302,11 +302,11 @@ export default function NavBar() {
                       <p className="rounded px-2 text-[12px] text-base-100 hover:bg-gray-100 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:p-0 md:hover:bg-transparent group-hover:md:text-Navbar-Hover md:dark:hover:bg-transparent group-hover:md:dark:text-Navbar-Hover">
                         SignIn
                       </p>
-                    </Link>
+                    </button>
                   </li>
                   <li className=" border-b border-b-gray-500">
                     <Link
-                      href={"/users/signup"}
+                      href={"/signup"}
                       className="group flex justify-center px-3 py-2"
                     >
                       <svg
@@ -357,10 +357,7 @@ export default function NavBar() {
           >
             <ul className="mt-4 flex flex-col rounded-lg border border-gray-100 bg-primary-1000 p-4 font-medium dark:border-gray-700 dark:bg-gray-800 md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-primary-1000 md:p-0 md:dark:bg-gray-900 rtl:space-x-reverse">
               <li>
-                <Link
-                  href={"/users/homepage"}
-                  className="group block px-3  py-2"
-                >
+                <Link href={"/"} className="group block px-3  py-2">
                   <svg
                     width="18"
                     className=" mx-auto block"
@@ -380,7 +377,7 @@ export default function NavBar() {
                 </Link>
               </li>
               <li>
-                <Link href={"/users/about"} className="group block px-3 py-2">
+                <Link href={"/about"} className="group block px-3 py-2">
                   <svg
                     width="18"
                     className=" mx-auto block"
@@ -414,7 +411,7 @@ export default function NavBar() {
                 </Link>
               </li>
               <li>
-                <Link href={"/users/profile"} className="group block px-3 py-2">
+                <Link href={"/profile"} className="group block px-3 py-2">
                   <svg
                     width="18"
                     className=" mx-auto block"

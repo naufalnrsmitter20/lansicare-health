@@ -1,107 +1,69 @@
-// @ts-nocheck
+import connect from "@/src/utils/db";
+import { compare } from "bcrypt";
+import { NextAuthOptions } from "next-auth";
+import NextAuth from "next-auth/next";
+import CredentialsProvider from "next-auth/providers/credentials";
 
-import NextAuth from "next-auth";
-import { authOptions } from "@/src/lib/authOption";
+export const authOptions: NextAuthOptions = {
+  session: {
+    strategy: "jwt",
+  },
+  secret: process.env.NEXTAUTH_SECRET,
+  providers: [
+    CredentialsProvider({
+      type: "credentials",
+      name: "credentials",
+      credentials: {
+        // fullname: { label: "Nama", type: "text" },
+        email: { label: "Email", type: "email" },
+        password: { label: "Password", type: "password" },
+      },
+      async authorize(credentials) {
+        const { email, password } = credentials as {
+          email: string;
+          password: string;
+        };
+        const user: any = await connect();
 
-const handler = NextAuth(authOptions);
-export {
-  handler as GET,
-  handler as POST,
-  handler as PATCH,
-  handler as DELETE,
-  //   handler as OPTIONS,
-  //   handler as HEAD,
-  //   handler as PUT,
-  //   handler as TRACE,
-  //   handler as CONNECT,
+        if (user) {
+          const confirmPassword = await compare(password, user.password);
+          if (confirmPassword) {
+            return user;
+          }
+          return null;
+        } else {
+          return null;
+        }
+      },
+    }),
+  ],
+  callbacks: {
+    async jwt({ token, account, user, profile }: any) {
+      if (account?.provider === "credentials") {
+        token.email = user.email;
+        token.fullname = user.fullname;
+        token.role = user.role;
+      }
+      return token;
+    },
+    async session({ session, token }: any) {
+      if ("email" in token) {
+        session.user.email = token.email;
+      }
+      if ("fullname" in token) {
+        session.user.fullname = token.fullname;
+      }
+      if ("role" in token) {
+        session.user.role = token.role;
+      }
+      return session;
+    },
+  },
+  pages: {
+    signIn: "/signin",
+  },
 };
 
-// import NextAuth from "next-auth";
-// import { Account, User as AuthUser } from "next-auth";
-// import GithubProvider from "next-auth/providers/github";
-// import CredentialsProvider from "next-auth/providers/credentials";
-// import bcrypt from "bcryptjs";
-// import Admin from "@/src/models/Admin";
-// import Pasien from "@/src/models/Pasien";
-// import connect from "@/src/utils/db";
-// import { Provider } from "next-auth/providers/index";
+const handler = NextAuth(authOptions);
 
-// interface AuthOptions {
-//   providers: Provider[];
-//   callbacks: {
-//     signIn: (param: { user: AuthUser; account: Account }) => Promise<boolean>;
-//   };
-// }
-
-// export const authOptions: AuthOptions = {
-//   providers: [
-//     CredentialsProvider({
-//       id: "credentials",
-//       name: "Credentials",
-//       credentials: {
-//         nama: { label: "Nama", type: "text" },
-//         email: { label: "Email", type: "text" },
-//         password: { label: "Password", type: "password" },
-//       },
-//       async authorize(credentials: any) {
-//         await connect();
-//         try {
-//           const user = await Admin.findOne({ email: credentials.email });
-//           await Pasien.findOne({
-//             email: credentials.email,
-//             nama: credentials.nama,
-//           });
-//           if (user) {
-//             const isPasswordCorrect = await bcrypt.compare(
-//               credentials.password,
-//               user.password,
-//             );
-//             if (isPasswordCorrect) {
-//               return user;
-//             }
-//           }
-//         } catch (err: any) {
-//           throw new Error(err);
-//         }
-//       },
-//     }),
-//     GithubProvider({
-//       clientId: process.env.GITHUB_ID ?? "",
-//       clientSecret: process.env.GITHUB_SECRET ?? "",
-//     }),
-//   ],
-//   callbacks: {
-//     async signIn({ user, account }: { user: AuthUser; account?: Account }) {
-//       try {
-//         if (account?.provider === "credentials") {
-//           return true;
-//         } else if (account?.provider === "github") {
-//           await connect();
-//           const existingUser =
-//             (await Admin.findOne({ email: user.email })) ||
-//             (await Pasien.findOne({ email: user.email }));
-
-//           if (!existingUser) {
-//             const newAdmin = new Admin({
-//               email: user.email,
-//             });
-//             const newPasien = new Pasien({
-//               email: user.email,
-//             });
-
-//             await newAdmin.save();
-//             await newPasien.save();
-//           }
-//           return true;
-//         }
-//       } catch (error) {
-//         console.error("Error during sign-in:", error);
-//         return false;
-//       }
-//       return false; // Default to false if no conditions are met
-//     },
-//   },
-// };
-
-// export const handler = NextAuth(authOptions as any);
-// export { handler as GET, handler as POST };
+export { handler as GET, handler as POST };

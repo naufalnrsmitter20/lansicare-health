@@ -1,16 +1,11 @@
-import type { Metadata } from "next";
+"use client";
 import { Inter } from "next/font/google";
-import "../../globals.css";
-
-import SessionProvider from "../SessionProvider";
-import NavBar from "../component/NavBar";
+import "../globals.css";
+import React from "react";
+import { SessionProvider } from "next-auth/react";
+import NavBar from "./component/NavBar";
 
 const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "Sign In | User",
-  description: "Welcome to the LansiCare App!",
-};
 
 export default function RootLayout({
   children,
@@ -19,7 +14,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <title>LansiCare Health</title>
+      </head>
       <body className={inter.className}>
+        <NavBar />
         <SessionProvider>{children}</SessionProvider>
       </body>
     </html>

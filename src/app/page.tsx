@@ -1,12 +1,12 @@
 import Image from "next/image";
 import { redirect } from "next/navigation";
 import React from "react";
+import Homepage from "./(users)/component/HomePage";
 
 export default function Home() {
-  redirect("/users");
   return (
     <>
-      <h1 className=" text-red-800">hai</h1>
+      <h1 className=" text-red-800"></h1>
     </>
   );
 }

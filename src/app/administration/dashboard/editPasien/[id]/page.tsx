@@ -1,4 +1,3 @@
-// "use client";
 import React from "react";
 import SessionAuth from "../../../components/SessionAuth";
 import Sidebar from "../../../components/content/Sidebar";
