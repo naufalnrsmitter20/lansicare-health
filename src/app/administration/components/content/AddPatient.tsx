@@ -1,18 +1,10 @@
 "use client";
-import { Date, STATES } from "mongoose";
 import { useRouter } from "next/navigation";
 import React, { useState, SyntheticEvent } from "react";
-import Patient from "@/src/models/Pasien";
 
-const PasienStatusEnum = {
-  Registered: "Registered",
-  InProgress: "In Progress",
-  Verify: "Verify",
-  Done: "Done",
-};
 export default function AddPatient() {
   const [nfcId, setNfcId] = useState("");
-  const [nama, setNama] = useState("");
+  const [fullname, setNama] = useState("");
   const [TTL, setTTL] = useState("");
   const [alamat, setAlamat] = useState("");
   const [RT, setRT] = useState("");
@@ -36,38 +28,35 @@ export default function AddPatient() {
     setIsMutating(true);
 
     try {
-      const res = await fetch(
-        "https://lansicare-health.vercel.app/api/topics",
-        {
-          method: "POST",
-          headers: {
-            "Content-type": "application/json",
-          },
-          body: JSON.stringify({
-            nfcId: parseInt(nfcId),
-            email: email,
-            riwayatPenyakit: riwayatPenyakit,
-            pasienStatus: status,
-            nama: nama,
-            NIK: parseInt(NIK),
-            TTL: TTL,
-            JenisKelamin: jenisKelamin,
-            Alamat: alamat,
-            RT: parseInt(RT),
-            RW: parseInt(RW),
-            KelurahanDesa: kelurahanDesa,
-            Kecamatan: kecamatan,
-            Agama: agama,
-            Pekerjaan: pekerjaan,
-            Kewarganegaraan: kewarganegaraan,
-          }),
+      const res = await fetch(`/api/topics`, {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
         },
-      );
+        body: JSON.stringify({
+          nfcId: parseInt(nfcId),
+          email: email,
+          riwayatPenyakit: riwayatPenyakit,
+          pasienStatus: status,
+          fullname: fullname,
+          NIK: parseInt(NIK),
+          TTL: TTL,
+          JenisKelamin: jenisKelamin,
+          Alamat: alamat,
+          RT: parseInt(RT),
+          RW: parseInt(RW),
+          KelurahanDesa: kelurahanDesa,
+          Kecamatan: kecamatan,
+          Agama: agama,
+          Pekerjaan: pekerjaan,
+          Kewarganegaraan: kewarganegaraan,
+        }),
+      });
       setIsMutating(false);
       if (res.ok) {
         router.refresh();
         alert(`Data Added!`);
-        router.push("/administration/dashboard/dataPage");
+        router.push("/administration/dataPage");
       } else {
         throw new Error("Failed to create a topic");
       }
@@ -108,7 +97,7 @@ export default function AddPatient() {
                 type="text"
                 id="nama"
                 onChange={(e) => setNama(e.target.value)}
-                value={nama}
+                value={fullname}
                 className="block w-full rounded-lg border border-gray-400 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-mainBlue focus:ring-sky-400 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                 placeholder="Nama Lengkap"
                 required

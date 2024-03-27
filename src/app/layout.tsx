@@ -1,10 +1,14 @@
-"use client";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import React from "react";
-import { SessionProvider } from "next-auth/react";
+import AuthProviders from "../lib/authProviders";
+import { Metadata } from "next";
 
 const inter = Inter({ subsets: ["latin"] });
+export const metadata: Metadata = {
+  title: "LansiCare Health",
+  description: "Welcome to the LansiCare App!",
+};
 
 export default function RootLayout({
   children,
@@ -13,11 +17,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <title>LansiCare Health</title>
-      </head>
       <body className={inter.className}>
-        <SessionProvider>{children}</SessionProvider>
+        <AuthProviders>{children}</AuthProviders>
       </body>
     </html>
   );

@@ -1,57 +1,116 @@
-import { model, models, Model } from "mongoose";
-import { Document, Schema } from "mongoose";
+import mongoose, { Schema, Document } from "mongoose";
 import bcrypt from "bcrypt";
 
-interface userDocument extends Document {
+interface UserDocument extends Document {
   email: string;
   fullname: string;
   password: string;
   role: "admin" | "user";
+  comparePassword(candidatePassword: string): Promise<boolean>;
+  riwayatPenyakit: string;
+  pasienStatus: string;
+  NIK: number;
+  TTL: Date;
+  JenisKelamin: string;
+  Alamat: string;
+  RT: number;
+  RW: number;
+  KelurahanDesa: string;
+  Kecamatan: string;
+  Agama: string;
+  StatusPerkawinan: boolean;
+  Pekerjaan: string;
+  Kewarganegaraan: string;
+  BerlakuHingga: Date;
+  nfcId: number;
 }
 
-interface Methods {
-  comparePassword(password: string): Promise<boolean>;
-}
+const userSchema = new Schema<UserDocument>(
+  {
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    fullname: {
+      type: String,
+      required: true,
+    },
+    password: {
+      type: String,
+      required: true,
+    },
+    role: {
+      type: String,
+      enum: ["admin", "user"],
+      default: "user",
+    },
+    riwayatPenyakit: {
+      type: String,
+    },
+    pasienStatus: {
+      type: String,
+    },
+    NIK: {
+      type: Number,
+    },
+    TTL: {
+      type: Date,
+    },
+    JenisKelamin: {
+      type: String,
+    },
+    Alamat: {
+      type: String,
+    },
+    RT: {
+      type: Number,
+    },
+    RW: {
+      type: Number,
+    },
+    KelurahanDesa: {
+      type: String,
+    },
+    Kecamatan: {
+      type: String,
+    },
+    Agama: {
+      type: String,
+    },
+    StatusPerkawinan: {
+      type: Boolean,
+    },
 
-const userSchema = new Schema<userDocument, {}, Methods>({
-  email: {
-    type: String,
-    required: true,
-    unique: true,
+    Pekerjaan: {
+      type: String,
+    },
+    nfcId: {
+      type: Number,
+    },
+    Kewarganegaraan: {
+      type: String,
+    },
   },
-  fullname: {
-    type: String,
-    required: true,
-  },
-  password: {
-    type: String,
-    required: true,
-  },
-  role: {
-    type: String,
-    enum: ["admin", "user"],
-    default: "user",
-  },
-});
+  { timestamps: true },
+);
 
-userSchema.pre("save", async function (next) {
+// Pre-save hook to hash the password
+userSchema.pre<UserDocument>("save", async function (next) {
   if (!this.isModified("password")) return next();
-  try {
-    const salt = await bcrypt.genSalt(10);
-    this.password = await bcrypt.hash(this.password, salt);
-    next();
-  } catch (error) {
-    throw error;
-  }
+
+  const salt = await bcrypt.genSalt(10);
+  this.password = await bcrypt.hash(this.password, salt);
+  next();
 });
 
-userSchema.methods.comparePassword = async function (password) {
-  try {
-    return await bcrypt.compare(password, this.password);
-  } catch (error) {
-    throw error;
-  }
+// Method to compare passwords
+userSchema.methods.comparePassword = async function (
+  candidatePassword: string,
+): Promise<boolean> {
+  return bcrypt.compare(candidatePassword, this.password);
 };
 
-const UserModel = models.User || model("User", userSchema);
-export default UserModel as Model<userDocument, {}, Methods>;
+const User = mongoose.models.users || mongoose.model("users", userSchema);
+
+export default User;

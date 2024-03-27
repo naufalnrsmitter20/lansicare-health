@@ -63,16 +63,3 @@ export async function GET() {
     );
   }
 }
-
-export async function DELETE(request: any): Promise<NextResponse> {
-  const id: string | null = request.nextUrl.searchParams.get("_id");
-  if (!id) {
-    throw new Error("ID parameter is missing");
-  }
-  await connect();
-  await User.findByIdAndDelete(id);
-  return NextResponse.json(
-    { message: "Data patient deleted!" },
-    { status: 200 },
-  );
-}

@@ -16,7 +16,7 @@ interface PatientData {
   email: string;
   riwayatPenyakit: string;
   pasienStatus: string;
-  nama: string;
+  fullname: string;
   NIK: number;
   TTL: string;
   JenisKelamin: string;
@@ -37,7 +37,7 @@ export default function EditPatient({
   email,
   riwayatPenyakit,
   pasienStatus,
-  nama,
+  fullname,
   NIK,
   TTL,
   JenisKelamin,
@@ -55,7 +55,7 @@ export default function EditPatient({
   email: string;
   riwayatPenyakit: string;
   pasienStatus: string;
-  nama: string;
+  fullname: string;
   NIK: number;
   TTL: string;
   JenisKelamin: string;
@@ -69,7 +69,7 @@ export default function EditPatient({
   Kewarganegaraan: string;
 }): React.ReactElement {
   const [newNfcId, setNewNfcId] = useState(nfcId);
-  const [newNama, setNewNama] = useState(nama);
+  const [newFullname, setNewNama] = useState(fullname);
   const [newTTL, setNewTTL] = useState(TTL);
   const [newAlamat, setNewAlamat] = useState(Alamat);
   const [newRT, setNewRT] = useState(RT);
@@ -80,7 +80,7 @@ export default function EditPatient({
   const [newNIK, setNewNIK] = useState(NIK);
   const [newEmail, setNewEmail] = useState(email);
   const [newRiwayatPenyakit, setNewRiwayatPenyakit] = useState(riwayatPenyakit);
-  const [newStatus, setNewStatus] = useState(pasienStatus);
+  const [newPasienStatus, setNewStatus] = useState(pasienStatus);
   const [newAgama, setNewAgama] = useState(Agama);
   const [newKewarganegaraan, setNewKewarganegaraan] = useState(Kewarganegaraan);
   const [newPekerjaan, setNewPekerjaan] = useState(Pekerjaan);
@@ -92,40 +92,39 @@ export default function EditPatient({
     setIsMutating(true);
 
     try {
-      const res = await fetch(
-        `https://lansicare-health.vercel.app/api/topics/${_id}`,
-        {
-          method: "PUT",
-          headers: {
-            "Content-type": "application/json",
-          },
-          body: JSON.stringify({
-            newNfcId,
-            newNama,
-            newTTL,
-            newAlamat,
-            newRT,
-            newRW,
-            newJenisKelamin,
-            newKelurahanDesa,
-            newKecamatan,
-            newNIK,
-            newEmail,
-            newRiwayatPenyakit,
-            newStatus,
-            newAgama,
-            newKewarganegaraan,
-            newPekerjaan,
-          }),
+      const res = await fetch(`/api/topics/${_id}`, {
+        method: "PUT",
+        headers: {
+          "Content-type": "application/json",
         },
-      );
+        body: JSON.stringify({
+          newNfcId,
+          newFullname,
+          newTTL,
+          newAlamat,
+          newRT,
+          newRW,
+          newJenisKelamin,
+          newKelurahanDesa,
+          newKecamatan,
+          newNIK,
+          newEmail,
+          newRiwayatPenyakit,
+          newPasienStatus,
+          newAgama,
+          newKewarganegaraan,
+          newPekerjaan,
+        }),
+      });
 
       if (!res.ok) {
         throw new Error("Failed to update Patient");
       }
+      console.log(await res.json());
+
       router.refresh();
       alert(`Data Uppdated!`);
-      router.push("/administration/dashboard/dataPage");
+      router.push("/administration/dataPage");
     } catch (error) {
       console.log(error);
     }
@@ -154,16 +153,16 @@ export default function EditPatient({
             </div>
             <div>
               <label
-                htmlFor="nama"
+                htmlFor="fullname"
                 className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
               >
                 Nama
               </label>
               <input
                 type="text"
-                id="nama"
+                id="fullname"
                 onChange={(e) => setNewNama(e.target.value)}
-                value={newNama}
+                value={newFullname}
                 className="block w-full rounded-lg border border-gray-400 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-mainBlue focus:ring-sky-400 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                 placeholder="Nama Lengkap"
                 required
@@ -398,20 +397,15 @@ export default function EditPatient({
               >
                 Status
               </label>
-              <select
-                name="status"
+              <input
+                type="text"
                 id="status"
-                onChange={(e) => setNewStatus(e.target.value as PasienStatus)}
-                value={newStatus}
+                onChange={(e) => setNewStatus(e.target.value)}
+                value={newPasienStatus}
+                placeholder="Rawat Inap / Rawat Jalan"
                 className="block w-full rounded-lg border border-gray-400 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-mainBlue focus:ring-sky-400 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                 required
-              >
-                <option value="null">-- SELECT --</option>
-                <option value="Registered">Registered</option>
-                <option value="InProgress">In Progress</option>
-                <option value="Verify">Verify</option>
-                <option value="Done">Done</option>
-              </select>
+              />
             </div>
             <div>
               {!isMutating ? (

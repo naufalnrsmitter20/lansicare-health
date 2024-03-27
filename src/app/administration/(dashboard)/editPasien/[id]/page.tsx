@@ -1,11 +1,11 @@
 import React from "react";
-import SessionAuth from "../../../components/SessionAuth";
 import Sidebar from "../../../components/content/Sidebar";
 import Headers from "../../../components/content/Headers";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
 import TableData from "../../../components/content/TableData";
 import EditPatient from "../../../components/content/EditPatient";
+import WelcomeBack from "../../../components/WelcomeBack";
 
 enum PasienStatus {
   Registered = "Registered",
@@ -20,7 +20,7 @@ interface PatientData {
   email: string;
   riwayatPenyakit: string;
   pasienStatus: string;
-  nama: string;
+  fullname: string;
   NIK: number;
   TTL: string;
   JenisKelamin: string;
@@ -38,12 +38,9 @@ interface PatientData {
 
 const getTopicById = async (_id: number) => {
   try {
-    const res = await fetch(
-      `https://lansicare-health.vercel.app/api/topics/${_id}`,
-      {
-        cache: "no-store",
-      },
-    );
+    const res = await fetch(`http://localhost:3000/api/topics/${_id}`, {
+      cache: "no-store",
+    });
 
     if (!res.ok) {
       throw new Error("Failed to fetch topic");
@@ -64,7 +61,7 @@ export default async function EditDataPages({ params }: { params: any }) {
       email,
       riwayatPenyakit,
       pasienStatus,
-      nama,
+      fullname,
       NIK,
       TTL,
       JenisKelamin,
@@ -88,9 +85,7 @@ export default async function EditDataPages({ params }: { params: any }) {
           <div className="ml-64 w-3/4 max-w-full">
             <Headers name="EDIT PATIENT" />
             <div className="absolute right-0 top-0 mx-4 max-w-lg">
-              <p className=" mt-7 w-full rounded-full bg-gray-800 px-5 py-4 text-center text-base font-medium text-white">
-                Logged in! :
-              </p>
+              <WelcomeBack />
             </div>
             <EditPatient
               nfcId={nfcId}
@@ -98,7 +93,7 @@ export default async function EditDataPages({ params }: { params: any }) {
               email={email}
               riwayatPenyakit={riwayatPenyakit}
               pasienStatus={pasienStatus}
-              nama={nama}
+              fullname={fullname}
               NIK={NIK}
               TTL={TTL}
               JenisKelamin={JenisKelamin}
