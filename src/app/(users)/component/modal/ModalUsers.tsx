@@ -120,8 +120,8 @@ export default function ModalUsers({
       }
       console.log(await res.json());
 
-      router.refresh();
       alert(`Data Uppdated!`);
+      router.refresh();
       router.back();
     } catch (error) {
       console.log(error);

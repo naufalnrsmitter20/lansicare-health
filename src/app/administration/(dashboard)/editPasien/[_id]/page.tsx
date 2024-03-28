@@ -6,8 +6,8 @@ import EditPatient from "../../../components/content/EditPatient";
 import WelcomeBack from "../../../components/WelcomeBack";
 
 interface PatientData {
-  nfcId: number;
   _id: number;
+  nfcId: number;
   email: string;
   riwayatPenyakit: string;
   pasienStatus: string;
@@ -26,9 +26,9 @@ interface PatientData {
   Kewarganegaraan: string;
 }
 
-const getTopicById = async (_id: number) => {
+const getTopicById = async (id: any) => {
   try {
-    const res = await fetch(`/api/topics/${_id}`, {
+    const res = await fetch(`/api/topics/${id}`, {
       cache: "no-store",
     });
 
@@ -46,8 +46,8 @@ export default async function EditDataPages({ params }: { params: any }) {
   try {
     const patientData: PatientData = await getTopicById(id);
     const {
-      nfcId,
       _id,
+      nfcId,
       email,
       riwayatPenyakit,
       pasienStatus,
@@ -76,8 +76,8 @@ export default async function EditDataPages({ params }: { params: any }) {
               <WelcomeBack />
             </div>
             <EditPatient
-              nfcId={nfcId}
               _id={_id}
+              nfcId={nfcId}
               email={email}
               riwayatPenyakit={riwayatPenyakit}
               pasienStatus={pasienStatus}
