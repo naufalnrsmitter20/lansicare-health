@@ -1,15 +1,18 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import connect from "@/src/utils/db";
-import Pasien from "@/src/models/Pasien";
+import User from "@/src/models/userModel";
 
-export async function PUT(request: Request, { params }: { params: { _id: any } }) {
+export async function PUT(
+  request: NextRequest,
+  { params }: { params: { _id: string } },
+) {
   const { _id } = params;
   const {
     newNfcId: nfcId,
     newEmail: email,
     newRiwayatPenyakit: riwayatPenyakit,
     newPasienStatus: pasienStatus,
-    newNama: nama,
+    newFullname: fullname,
     newNIK: NIK,
     newTTL: TTL,
     newJenisKelamin: JenisKelamin,
@@ -25,13 +28,39 @@ export async function PUT(request: Request, { params }: { params: { _id: any } }
     newBerlakuHingga: BerlakuHingga,
   } = await request.json();
   await connect();
-  await Pasien.findByIdAndUpdate(_id, { nfcId, email, riwayatPenyakit, pasienStatus, nama, NIK, TTL, JenisKelamin, Alamat, RT, RW, KelurahanDesa, Kecamatan, Agama, StatusPerkawinan, Pekerjaan, Kewarganegaraan, BerlakuHingga });
+  await User.findByIdAndUpdate(
+    _id,
+    {
+      nfcId,
+      email,
+      riwayatPenyakit,
+      pasienStatus,
+      fullname,
+      NIK,
+      TTL,
+      JenisKelamin,
+      Alamat,
+      RT,
+      RW,
+      KelurahanDesa,
+      Kecamatan,
+      Agama,
+      StatusPerkawinan,
+      Pekerjaan,
+      Kewarganegaraan,
+      BerlakuHingga,
+    },
+    { new: true, runValidators: true },
+  );
   return NextResponse.json({ message: "Patient updated" }, { status: 200 });
 }
 
-export async function GET(request: any, { params }: { params: { _id: any } }) {
+export async function GET(
+  request: NextRequest,
+  { params }: { params: { _id: string } },
+) {
   const { _id } = params;
   await connect();
-  const pasien = await Pasien.findOne({ _id: _id });
+  const pasien = await User.findOne({ _id: _id });
   return NextResponse.json(pasien, { status: 200 });
 }

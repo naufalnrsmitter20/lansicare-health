@@ -9,12 +9,9 @@ export default function RemovePatient({ _id }: { _id: any }) {
     const confirmed = confirm("Are you sure?");
 
     if (confirmed) {
-      const res = await fetch(
-        `https://lansicare-health.vercel.app/api/topics?_id=${_id}`,
-        {
-          method: "DELETE",
-        },
-      );
+      const res = await fetch(`/api/topics?_id=${_id}`, {
+        method: "DELETE",
+      });
 
       if (res.ok) {
         router.refresh();

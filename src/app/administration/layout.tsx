@@ -2,9 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../globals.css";
 
-import { getServerSession } from "next-auth";
-import SessionProvider from "./SessionProvider";
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -12,16 +9,14 @@ export const metadata: Metadata = {
   description: "Welcome to the LansiCare App!",
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <SessionProvider>{children}</SessionProvider>
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }

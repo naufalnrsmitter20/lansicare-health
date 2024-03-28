@@ -9,10 +9,8 @@ import InputSearch from "../utilities/InputSearch";
 import CopyClipboard from "../utilities/CopyClipboard";
 
 enum PasienStatus {
-  Registered = "Registered",
-  InProgress = "In Progress",
-  Verify = "Verify",
-  Done = "Done",
+  rawatInap = "Rawat Inap",
+  rawatJalan = "Rawat Jalan",
 }
 
 type Patient = {
@@ -21,7 +19,7 @@ type Patient = {
   email: string;
   riwayatPenyakit: string;
   pasienStatus: string;
-  nama: string;
+  fullname: string;
   NIK: number;
   TTL: string;
   JenisKelamin: string;
@@ -40,15 +38,15 @@ type Patient = {
 
 export const getData = async () => {
   try {
-    const res = await fetch("https://lansicare-health.vercel.app/api/topics", {
+    const res = await fetch(`/api/topics/`, {
       cache: "no-store",
     });
+    const data = await res.json();
 
     if (!res.ok) {
       throw new Error("Failed to fetch topics");
     }
-
-    return res.json();
+    return data;
   } catch (error) {
     console.log("Error loading topics: ", error);
   }
@@ -62,7 +60,8 @@ export default function TableData() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { patients }: { patients: Patient[] } = await getData();
+        const data = await getData();
+        const patients = data.patients || [];
         setPatients(patients);
         setFilteredPatients(patients);
       } catch (error) {
@@ -78,7 +77,7 @@ export default function TableData() {
     const filtered = patients.filter(
       (patient) =>
         patient.nfcId?.toString().includes(searchInput) ||
-        patient.nama?.toString().includes(searchInput),
+        patient.fullname?.toString().includes(searchInput),
     );
     setFilteredPatients(filtered);
   }, [searchInput, patients]);
@@ -86,7 +85,7 @@ export default function TableData() {
   const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchInput(e.target.value);
   };
-  const textCopy = "https://lansicare-healthes.vercel.app/users/profile";
+  const textCopy = "https://lansicare-health.vercel.app/users/profile";
   return (
     <>
       <section className="container mx-10 mt-7 block w-full max-w-7xl">
@@ -105,7 +104,7 @@ export default function TableData() {
         </div>
         <div>
           <Link
-            href={"/administration/dashboard/addPasien"}
+            href={"/administration/addPasien"}
             className="absolute right-28 top-36 mb-2 me-2 flex rounded-lg bg-mainBlue px-3 py-2.5 text-sm font-medium text-white hover:bg-sky-400 focus:outline-none focus:ring-4 focus:ring-blue-300"
           >
             <p className="mr-2">Add</p>
@@ -145,26 +144,26 @@ export default function TableData() {
                   >
                     <td
                       scope="row"
-                      className="border-4 border-white bg-sky-200 px-6 py-3 text-center text-xs font-medium text-gray-900 dark:text-white"
+                      className="border-4 border-white bg-sky-200 px-6 py-2 text-center text-xs font-medium text-gray-900 dark:text-white"
                     >
                       {index + 1}
                     </td>
-                    <td className="border-4 border-white bg-sky-200 px-6 py-3 text-xs">
+                    <td className="border-4 border-white bg-sky-200 px-6 py-2 text-xs">
                       {Data.nfcId}
                     </td>
-                    <td className="border-4 border-white bg-sky-200 px-6 py-3 text-xs font-semibold">
-                      {Data.nama}
+                    <td className="border-4 border-white bg-sky-200 px-6 py-2 text-xs font-semibold">
+                      {Data.fullname}
                     </td>
-                    <td className="border-4 border-white bg-sky-200 px-6 py-3 text-center text-xs">
+                    <td className="border-4 border-white bg-sky-200 px-6 py-2 text-center text-xs">
                       {Data.pasienStatus}
                     </td>
-                    <td className="border-4 border-white bg-sky-200 px-6 py-3 text-center text-xs">
+                    <td className="border-4 border-white bg-sky-200 px-6 py-2 text-center text-xs">
                       {Data.updatedAt}
                     </td>
 
-                    <td className="flex-1 justify-center border-4 border-white bg-sky-200 px-6 py-3">
+                    <td className="flex-1 justify-center border-4 border-white bg-sky-200 px-6 py-2">
                       <Link
-                        href={`/administration/dashboard/editPasien/${Data._id}`}
+                        href={`/administration/editPasien/${Data._id}`}
                         className="mb-2 me-2 rounded-lg bg-green-400 px-5 py-2.5 text-sm font-medium text-white hover:bg-green-500 focus:outline-none focus:ring-4 focus:ring-blue-300 "
                       >
                         Edit & View
