@@ -3,34 +3,6 @@
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
-enum PasienStatus {
-  Registered = "Registered",
-  InProgress = "In Progress",
-  Verify = "Verify",
-  Done = "Done",
-}
-
-interface PatientData {
-  _id: number;
-  nfcId: number;
-  email: string;
-  riwayatPenyakit: string;
-  pasienStatus: string;
-  fullname: string;
-  NIK: number;
-  TTL: string;
-  JenisKelamin: string;
-  Alamat: string;
-  RT: number;
-  RW: number;
-  KelurahanDesa: string;
-  Kecamatan: string;
-  Agama: string;
-  StatusPerkawinan: boolean;
-  Pekerjaan: string;
-  Kewarganegaraan: string;
-  BerlakuHingga: Date;
-}
 export default function EditPatient({
   _id,
   nfcId,
@@ -128,6 +100,9 @@ export default function EditPatient({
     } catch (error) {
       console.log(error);
     }
+  };
+  const onClose = () => {
+    router.back();
   };
   return (
     <>

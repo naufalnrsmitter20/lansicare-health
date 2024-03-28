@@ -2,17 +2,8 @@ import React from "react";
 import Sidebar from "../../../components/content/Sidebar";
 import Headers from "../../../components/content/Headers";
 import Link from "next/link";
-import { useSession } from "next-auth/react";
-import TableData from "../../../components/content/TableData";
 import EditPatient from "../../../components/content/EditPatient";
 import WelcomeBack from "../../../components/WelcomeBack";
-
-enum PasienStatus {
-  Registered = "Registered",
-  InProgress = "In Progress",
-  Verify = "Verify",
-  Done = "Done",
-}
 
 interface PatientData {
   nfcId: number;
@@ -33,12 +24,11 @@ interface PatientData {
   StatusPerkawinan: boolean;
   Pekerjaan: string;
   Kewarganegaraan: string;
-  BerlakuHingga: Date;
 }
 
 const getTopicById = async (_id: number) => {
   try {
-    const res = await fetch(`http://localhost:3000/api/topics/${_id}`, {
+    const res = await fetch(`/api/topics/${_id}`, {
       cache: "no-store",
     });
 
@@ -71,10 +61,8 @@ export default async function EditDataPages({ params }: { params: any }) {
       KelurahanDesa,
       Kecamatan,
       Agama,
-      StatusPerkawinan,
       Pekerjaan,
       Kewarganegaraan,
-      BerlakuHingga,
     } = patientData;
     // const {  } = KTP;
 

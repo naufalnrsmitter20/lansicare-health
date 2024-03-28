@@ -349,13 +349,8 @@ export default function Profiles() {
                                 </div>
                               </>
                             ) : null}
-                            {/* <ProfileEdit /> */}
                           </div>
-
-                          <form></form>
-                          {/* modal */}
                         </div>
-                        {/* content */}
                       </div>
                       {patient ? (
                         <div className="mt-10 w-screen max-w-full rounded-[10px] border bg-primary-1000 shadow-md lg:w-full">
