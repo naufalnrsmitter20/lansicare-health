@@ -163,7 +163,7 @@ export default function TableData() {
 
                     <td className="flex-1 justify-center border-4 border-white bg-sky-200 px-6 py-2">
                       <Link
-                        href={`/administration/editPasien/${Data._id}`}
+                        href={`editPasien/${Data._id}`}
                         className="mb-2 me-2 rounded-lg bg-green-400 px-5 py-2.5 text-sm font-medium text-white hover:bg-green-500 focus:outline-none focus:ring-4 focus:ring-blue-300 "
                       >
                         Edit & View

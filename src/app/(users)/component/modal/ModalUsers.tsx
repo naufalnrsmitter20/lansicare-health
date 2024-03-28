@@ -122,6 +122,7 @@ export default function ModalUsers({
 
       alert(`Data Uppdated!`);
       router.refresh();
+      window.location.reload();
       router.back();
     } catch (error) {
       console.log(error);

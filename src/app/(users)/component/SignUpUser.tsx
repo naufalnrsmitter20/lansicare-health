@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { error } from "console";
+import { signIn } from "next-auth/react";
 
 export default function SignUpUser() {
   const router = useRouter();
@@ -129,6 +130,7 @@ export default function SignUpUser() {
                 <div className="mt-7 grid grid-cols-2 gap-2">
                   <button
                     type="button"
+                    onClick={() => signIn("credentials")}
                     className="mb-2 me-2 rounded-lg border border-gray-300 bg-white px-5 py-2.5 text-sm font-medium text-base-100 hover:bg-base-100 hover:text-white focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
                   >
                     {/* image */}

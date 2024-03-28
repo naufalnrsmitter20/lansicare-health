@@ -2,6 +2,28 @@ import { NextRequest, NextResponse } from "next/server";
 import connect from "@/src/utils/db";
 import User from "@/src/models/userModel";
 
+interface NewUserResponse {
+  id: string;
+  fullname: string;
+  email: string;
+  role: string;
+  Agama: string;
+  Alamat: string;
+  JenisKelamin: string;
+  Kecamatan: string;
+  KelurahanDesa: string;
+  Kewarganegaraan: string;
+  NIK: number;
+  Pekerjaan: string;
+  RT: number;
+  RW: number;
+  TTL: Date;
+  riwayatPenyakit: string;
+  StatusPerkawinan: boolean;
+  nfcId: number;
+  pasienStatus: string;
+}
+
 export async function PUT(
   request: NextRequest,
   { params }: { params: { _id: string } },
