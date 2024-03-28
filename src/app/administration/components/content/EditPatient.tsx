@@ -22,40 +22,46 @@ export default function EditPatient({
   Pekerjaan,
   Kewarganegaraan,
 }: {
-  _id: number;
-  nfcId: number;
-  email: string;
-  riwayatPenyakit: string;
-  pasienStatus: string;
-  fullname: string;
-  NIK: number;
-  TTL: string;
-  JenisKelamin: string;
-  Alamat: string;
-  RT: number;
-  RW: number;
-  KelurahanDesa: string;
-  Kecamatan: string;
-  Agama: string;
-  Pekerjaan: string;
-  Kewarganegaraan: string;
+  _id?: string;
+  nfcId?: number;
+  email?: string;
+  riwayatPenyakit?: string;
+  pasienStatus?: string;
+  fullname?: string;
+  NIK?: number;
+  TTL?: string;
+  JenisKelamin?: string;
+  Alamat?: string;
+  RT?: number;
+  RW?: number;
+  KelurahanDesa?: string;
+  Kecamatan?: string;
+  Agama?: string;
+  Pekerjaan?: string;
+  Kewarganegaraan?: string;
 }): React.ReactElement {
-  const [newNfcId, setNewNfcId] = useState(nfcId);
-  const [newFullname, setNewNama] = useState(fullname);
-  const [newTTL, setNewTTL] = useState(TTL);
-  const [newAlamat, setNewAlamat] = useState(Alamat);
-  const [newRT, setNewRT] = useState(RT);
-  const [newRW, setNewRW] = useState(RW);
-  const [newJenisKelamin, setNewJenisKelamin] = useState(JenisKelamin);
-  const [newKelurahanDesa, setNewKelurahan_desa] = useState(KelurahanDesa);
-  const [newKecamatan, setNewKecamatan] = useState(Kecamatan);
-  const [newNIK, setNewNIK] = useState(NIK);
-  const [newEmail, setNewEmail] = useState(email);
-  const [newRiwayatPenyakit, setNewRiwayatPenyakit] = useState(riwayatPenyakit);
-  const [newPasienStatus, setNewStatus] = useState(pasienStatus);
-  const [newAgama, setNewAgama] = useState(Agama);
-  const [newKewarganegaraan, setNewKewarganegaraan] = useState(Kewarganegaraan);
-  const [newPekerjaan, setNewPekerjaan] = useState(Pekerjaan);
+  const [newNfcId, setNewNfcId] = useState(nfcId ?? "");
+  const [newFullname, setNewNama] = useState(fullname ?? "");
+  const [newTTL, setNewTTL] = useState(TTL ?? "");
+  const [newAlamat, setNewAlamat] = useState(Alamat ?? "");
+  const [newRT, setNewRT] = useState(RT ?? "");
+  const [newRW, setNewRW] = useState(RW ?? "");
+  const [newJenisKelamin, setNewJenisKelamin] = useState(JenisKelamin ?? "");
+  const [newKelurahanDesa, setNewKelurahan_desa] = useState(
+    KelurahanDesa ?? "",
+  );
+  const [newKecamatan, setNewKecamatan] = useState(Kecamatan ?? "");
+  const [newNIK, setNewNIK] = useState(NIK ?? "");
+  const [newEmail, setNewEmail] = useState(email ?? "");
+  const [newRiwayatPenyakit, setNewRiwayatPenyakit] = useState(
+    riwayatPenyakit ?? "",
+  );
+  const [newPasienStatus, setNewStatus] = useState(pasienStatus ?? "");
+  const [newAgama, setNewAgama] = useState(Agama ?? "");
+  const [newKewarganegaraan, setNewKewarganegaraan] = useState(
+    Kewarganegaraan ?? "",
+  );
+  const [newPekerjaan, setNewPekerjaan] = useState(Pekerjaan ?? "");
   const router = useRouter();
   const [isMutating, setIsMutating] = useState(false);
 
@@ -101,9 +107,7 @@ export default function EditPatient({
       console.log(error);
     }
   };
-  const onClose = () => {
-    router.back();
-  };
+
   return (
     <>
       <section className="w-ful container mx-10 mt-7 block max-w-7xl">

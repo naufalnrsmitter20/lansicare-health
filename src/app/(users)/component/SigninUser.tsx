@@ -11,9 +11,11 @@ export default function SigninUser() {
   const [IsLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   const { push, refresh } = useRouter();
+  const [email, setEmail] = useState("");
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     setIsLoading(true);
+    // await signIn("email", { email });
     try {
       const res = await signIn("credentials", {
         redirect: false,

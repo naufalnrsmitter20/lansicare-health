@@ -6,7 +6,7 @@ import EditPatient from "../../../components/content/EditPatient";
 import WelcomeBack from "../../../components/WelcomeBack";
 
 interface PatientData {
-  _id: number;
+  _id: string;
   nfcId: number;
   email: string;
   riwayatPenyakit: string;
