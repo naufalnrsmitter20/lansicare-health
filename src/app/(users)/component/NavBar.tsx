@@ -65,9 +65,9 @@ export default function NavBar() {
                   <li className=" border-b border-b-slate-300">
                     <HomeIcon />
                   </li>
-                  <li className=" mt-0.5 border-b border-b-slate-300">
+              {/* <li className=" mt-0.5 border-b border-b-slate-300">
                     <AboutIcon />
-                  </li>
+                  </li> */}
                   <li className=" mt-0.5 border-b border-b-slate-300">
                     <ProfileIcon />
                   </li>
@@ -97,9 +97,9 @@ export default function NavBar() {
               <li>
                 <HomeIcon />
               </li>
-              <li>
+{/*               <li>
                 <AboutIcon />
-              </li>
+              </li> */}
               <li>
                 <ProfileIcon />
               </li>
