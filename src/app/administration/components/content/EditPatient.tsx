@@ -7,8 +7,6 @@ import SpinnerProops from "../utilities/Spinner";
 import Toaster from "../utilities/Toaster";
 import { HiCheck } from "react-icons/hi";
 import { LoadingButton, PrimaryButton } from "../utilities/Buttons";
-import { Modal } from "flowbite-react";
-import ModalRiwayatPenyakit from "./ModalRiwayatPenyakit";
 
 export default function EditPatient({
   _id,
@@ -78,14 +76,6 @@ export default function EditPatient({
   const [newPekerjaan, setNewPekerjaan] = useState(Pekerjaan ?? "");
   const [newRole, setNewRole] = useState(role ?? ("admin" || "user"));
 
-  const [newTanggalCheckup, setNewTanggalCheckup] = useState(
-    tanggalCheckup ?? "",
-  );
-  const [newRumahSakit, setNewRumahSakit] = useState(rumah_sakit ?? "");
-  const [newNamaDokter, setNewNamaDokter] = useState(nama_dokter ?? "");
-  const [newSpesialis, setNewSpesialis] = useState(spesialis ?? "");
-  const [newPenyakit, setNewPenyakit] = useState(penyakit ?? "");
-
   const router = useRouter();
   const [isMutating, setIsMutating] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -118,11 +108,6 @@ export default function EditPatient({
           newKewarganegaraan,
           newPekerjaan,
           newRole,
-          newTanggalCheckup,
-          newRumahSakit,
-          newNamaDokter,
-          newSpesialis,
-          newPenyakit,
         }),
       });
 
@@ -149,7 +134,9 @@ export default function EditPatient({
             <div className="mb-10">
               <div className="flex justify-start gap-x-4">
                 <PrimaryButton
-                  onClick={() => setModal(true)}
+                  onClick={() =>
+                    router.push(`/administration/editPasien/CP/${_id}`)
+                  }
                   className="max-w-56"
                   type="button"
                 >
@@ -165,109 +152,6 @@ export default function EditPatient({
                   List Riwayat Penyakit
                 </PrimaryButton>
               </div>
-              <Modal show={modal} size="md" onClose={onCloseModal} popup>
-                <Modal.Header />
-                <Modal.Body>
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <h3 className="text-xl font-medium text-gray-900 dark:text-white">
-                      CheckUp Pasien
-                    </h3>
-                    <div>
-                      <div className="mb-2 block">
-                        <Label htmlFor="Tanggal" value="Tanggal" />
-                      </div>
-                      <TextInput
-                        id="Tanggal"
-                        name="Tanggal"
-                        type="date"
-                        value={newTanggalCheckup}
-                        onChange={(e) => setNewTanggalCheckup(e.target.value)}
-                        placeholder="Tanggal CheckUp"
-                      />
-                    </div>
-                    <div>
-                      <div className="mb-2 block">
-                        <Label htmlFor="rumahsakit" value="Rumah Sakit" />
-                      </div>
-                      <TextInput
-                        id="rumahsakit"
-                        name="rumahsakit"
-                        type="text"
-                        value={newRumahSakit}
-                        onChange={(e) => setNewRumahSakit(e.target.value)}
-                      />
-                    </div>
-                    <div>
-                      <div className="mb-2 block">
-                        <Label htmlFor="dokter" value="Nama Dokter" />
-                      </div>
-                      <TextInput
-                        id="dokter"
-                        name="dokter"
-                        type="text"
-                        value={newNamaDokter}
-                        onChange={(e) => setNewNamaDokter(e.target.value)}
-                      />
-                    </div>
-                    <div>
-                      <div className="mb-2 block">
-                        <Label htmlFor="spesialis" value="Spesialis" />
-                      </div>
-                      <TextInput
-                        id="spesialis"
-                        name="spesialis"
-                        type="text"
-                        value={newSpesialis}
-                        onChange={(e) => setNewSpesialis(e.target.value)}
-                      />
-                    </div>
-                    <div>
-                      <div className="mb-2 block">
-                        <Label htmlFor="penyakit" value="Penyakit" />
-                      </div>
-                      <TextInput
-                        id="penyakit"
-                        name="penyakit"
-                        type="text"
-                        value={newPenyakit}
-                        onChange={(e) => setNewPenyakit(e.target.value)}
-                      />
-                    </div>
-
-                    <div className="w-full">
-                      {!isMutating ? (
-                        <>
-                          {!isVisible ? (
-                            <PrimaryButton type="submit">
-                              <p>Submit</p>
-                            </PrimaryButton>
-                          ) : (
-                            <PrimaryButton type="button" onClick={onCloseModal}>
-                              <p>Kembali</p>
-                            </PrimaryButton>
-                          )}
-                        </>
-                      ) : (
-                        <LoadingButton type="button" className="w-full">
-                          <Spinner
-                            theme={SpinnerProops.spinner}
-                            color="white"
-                          />
-                          <p className="ml-3 pt-0.5 text-[12px] font-semibold lg:text-[14px]">
-                            Loading...
-                          </p>
-                        </LoadingButton>
-                      )}
-                    </div>
-                    {isVisible && (
-                      <Toaster
-                        type={<HiCheck className="h-5 w-5" />}
-                        message="Data Berhasil Diperbarui"
-                      />
-                    )}
-                  </form>
-                </Modal.Body>
-              </Modal>
             </div>
 
             <form onSubmit={handleSubmit}>

@@ -23,12 +23,12 @@ interface UserDocument extends Document {
   Kewarganegaraan: string;
   BerlakuHingga: Date;
   nfcId: number;
-  tanggalCheckup: string;
-  rumah_sakit: string;
-  nama_dokter: string;
+  tanggalCheckup: string[];
+  rumah_sakit: string[];
+  nama_dokter: string[];
   status_dokter: "online" | "offline";
-  spesialis: string;
-  penyakit: string;
+  spesialis: string[];
+  penyakit: string[];
 }
 
 const userSchema = new Schema<UserDocument>(
@@ -97,13 +97,13 @@ const userSchema = new Schema<UserDocument>(
       type: String,
     },
     tanggalCheckup: {
-      type: String,
+      type: [String],
     },
     rumah_sakit: {
-      type: String,
+      type: [String],
     },
     nama_dokter: {
-      type: String,
+      type: [String],
     },
     status_dokter: {
       type: String,
@@ -111,11 +111,11 @@ const userSchema = new Schema<UserDocument>(
       default: null,
     },
     spesialis: {
-      type: String,
+      type: [String],
     },
 
     penyakit: {
-      type: String,
+      type: [String],
     },
   },
   { timestamps: true },
