@@ -29,12 +29,7 @@ export default function NavBar() {
             href={"/homepage"}
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
-            <Image
-              src={LansicareLogo}
-              width={150}
-              height={40}
-              alt="Lansicare Logo"
-            />
+            <p className="text-xl font-semibold">Lansifera</p>
           </Link>
           <div className="hidden space-x-3 md:order-2 md:flex md:space-x-0 rtl:space-x-reverse">
             {isAuth ? (
@@ -65,7 +60,7 @@ export default function NavBar() {
                   <li className=" border-b border-b-slate-300">
                     <HomeIcon />
                   </li>
-              {/* <li className=" mt-0.5 border-b border-b-slate-300">
+                  {/* <li className=" mt-0.5 border-b border-b-slate-300">
                     <AboutIcon />
                   </li> */}
                   <li className=" mt-0.5 border-b border-b-slate-300">
@@ -97,7 +92,7 @@ export default function NavBar() {
               <li>
                 <HomeIcon />
               </li>
-{/*               <li>
+              {/*               <li>
                 <AboutIcon />
               </li> */}
               <li>

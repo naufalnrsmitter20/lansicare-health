@@ -58,7 +58,7 @@ export default function TableData() {
   const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchInput(e.target.value);
   };
-  const textCopy = "https://lansicare-health.vercel.app/profile";
+  const textCopy = "https://lansifera.vercel.app/profile";
   return (
     <>
       <section className="container mx-10 mt-7 block w-full max-w-7xl">

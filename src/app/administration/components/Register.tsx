@@ -73,7 +73,7 @@ export default function Register() {
                 Register
               </h2>
               <p className=" mt-4 font-inter text-base text-white">
-                Register for LansiCare admin panel
+                Register for Lansifera admin panel
               </p>
               <hr className=" my-5 fill-white" />
             </div>

@@ -82,7 +82,7 @@ export default function AboutComponent() {
 
         <div className="mx-[15px] mt-10 rounded-[10px] border-gray-200 bg-primary-1000 py-10 shadow-md lg:mx-[35px]">
           <h4 className="mb-6 mt-4 text-center text-4xl font-bold lg:text-5xl">
-            LansiCare{" "}
+            Lansifera{" "}
             <span className="mx-auto mt-5 bg-gradient-to-r from-darkBlue to-mainBlue bg-clip-text pb-[50px] text-center text-4xl font-bold text-transparent lg:mt-10 lg:pb-[70px] lg:text-5xl">
               Trailer
             </span>
@@ -113,7 +113,7 @@ export default function AboutComponent() {
               </div>
               <div className="mt-5 text-[12px] font-medium lg:text-[16px]">
                 <p className="flex justify-normal text-left lg:mx-20">
-                  Selamat datang di website resmi LansiCare! Kami adalah tim
+                  Selamat datang di website resmi Lansifera! Kami adalah tim
                   InnoSync yang terdiri dari empat individu berbakat yang
                   terdiri dari Rakha, sebagai ketua kami, memimpin dengan visi
                   yang kuat serta mengarahkan tim untuk terus berkembang. Ada

@@ -8,10 +8,9 @@ import { Metadata } from "next";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "LansiCare Health",
-  description: "Welcome to the LansiCare App!",
+  title: "Lansifera Health",
+  description: "Welcome to the Lansifera App!",
 };
-
 
 export default function RootLayout({
   children,

@@ -49,9 +49,7 @@ export default function Footer() {
           <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-20">
             <div className="md:flex md:justify-between">
               <div className="mb-6 md:mb-0">
-                <a href="#" className="flex items-center">
-                  <Image src={LogoFooter} width={220} alt="FlowBite Logo" />
-                </a>
+                <p className="text-xl font-semibold">Lansifera</p>
               </div>
               <div className="grid gap-8 sm:grid-cols-3 sm:gap-6 md:grid-cols-2">
                 <div className="mr-10">

@@ -64,7 +64,7 @@ export default function Login() {
               Login
             </h2>
             <p className=" mt-4 font-inter text-base text-white">
-              Login for LansiCare admin panel
+              Login for Lansifera admin panel
             </p>
             <hr className=" my-5 fill-white" />
           </div>

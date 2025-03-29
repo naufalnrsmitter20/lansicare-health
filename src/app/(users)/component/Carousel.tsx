@@ -47,7 +47,7 @@ export default function Carousel() {
               />
               <div className="max-w-sm px-4 py-5 text-start lg:max-w-screen-xl lg:py-[72px]">
                 <h1 className="my-3 ml-10 text-3xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:my-5 lg:ml-48 lg:text-6xl">
-                  Welcome to LansiCare
+                  Welcome to Lansifera
                 </h1>
                 <p className="mb-2 text-ellipsis pl-10 text-[12px] font-normal text-gray-300 lg:mb-7 lg:px-48 lg:text-lg">
                   Selamat datang {session ? `${session.user?.name}` : "Guest"}!
@@ -87,7 +87,7 @@ export default function Carousel() {
               />
               <div className="max-w-sm px-4 py-5 text-end lg:max-w-[1300px] lg:py-20">
                 <h1 className="my-5 px-10 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:mr-5 lg:px-0 lg:text-6xl">
-                  LansiCare{" "}
+                  Lansifera{" "}
                 </h1>
                 <p className="mx-10 mb-4 text-ellipsis text-end text-[12px] font-normal text-gray-300 lg:mx-32 lg:mr-5 lg:text-lg">
                   Website ini membantu Anda dalam melakukan registrasi check-up
